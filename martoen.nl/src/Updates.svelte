@@ -1,6 +1,4 @@
 <script>
-
-
     const url = "https://api.github.com/users/ms-arrow/events/public"; 
     let count = 0;
 
@@ -12,21 +10,37 @@
             }), 
         }); 
         const data = await response.json();
-        console.log(data); 
 
         if (response.status >= 200 && response.status < 400) {
             data.forEach(function(i) {
                 if (data.type = "PushEvent" && count < 4) {
-                    // const card = document.getElementById('update'); 
-                    console.log(count); 
                     if (i.payload.commits !== undefined) {
                         i.payload.commits.forEach(function(commit) {
-                            console.log(commit)
+
+                            const img = document.querySelector(`.update${count} img`);  
+                            img.src = i.actor.avatar_url;
+
+                            const a = document.querySelector(`.update${count} a`); 
+
+                            (async function() {
+                                const response = await fetch(commit.url, { 
+                                    method: "GET", 
+                                    headers: new Headers({
+                                        'Content-Type': "application/json",
+                                    }),
+                                });
+                                const commitData = await response.json();
+                              
+                                a.href = commitData.html_url; 
+                            })();
+
                             const p = document.querySelector(`.update${count} p`); 
                             p.textContent = commit.message;
 
                             const h2 = document.querySelector(`.update${count} h2`); 
                             h2.textContent = i.repo.name;
+
+                            
                         })
                         count++;
                     }
@@ -45,28 +59,49 @@
     <h1>Updates</h1>
 
     <div class="update0">
+        <img src="" alt="Avatar">
         <h2>update_1</h2>
         <p>description</p>
+        <a href="#updates" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+            Github
+        </a>
     </div>
 
     <div class="update1">
+        <img src="" alt="Avatar">
         <h2>update_2</h2>
         <p>description</p>
+        <a href="#updates" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+            Github
+        </a>
     </div>
 
     <div class="update2">
+        <img src="" alt="Avatar">
         <h2>update_3</h2>
         <p>description</p>
+        <a href="#updates" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+            Github
+        </a>
     </div>
 
     <div class="update3">
+        <img src="" alt="Avatar">
         <h2>update_4</h2>
         <p>description</p>
+        <a href="#updates" target="_blank">
+            <i class="fa fa-link" aria-hidden="true"></i>
+            Github
+        </a>
     </div>
 </div>
 
 <style>
     .updates {
+        margin-top: 5em; 
         flex-direction: column;
     } 
 
@@ -81,12 +116,9 @@
         transition: .3s linear;
     }
 
-    .updates div:hover {
-        background: linear-gradient(45deg, var(--secondary), var(--primary));
-    }
-
     p {
         font-size: 1.2rem;
+        margin-block: .7em;
     }
 
     h2 {
@@ -95,5 +127,16 @@
 
     h1 {
         font-size: 2.5rem;
+    }
+
+    a {
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+
+    img { 
+        object-fit: contain; 
+        width: 3em; 
+        border-radius: 50%;
     }
 </style>
