@@ -1,42 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    --primary: #4FACF7; 
+    --secondary: #001220; 
+    --black: #0B0C10; 
+    --white: #fff;
 }
 
-html {
+
+body {
     font-size: 13px; 
-    font-family: 'Noto Sans TC', Courier, monospace;
-    background-color: #0B0C10; 
+    font-family: 'Lato', Courier, monospace;
+    background-color: var(--secondary); 
+    color: var(--white);
     scroll-behavior: smooth;
 }
 
 a {
     text-decoration: none;
+    color: var(--white);
 }
 
-::-webkit-scrollbar {
-    width: 0;
-}
-  
-::-webkit-scrollbar-track {
-    background: transparent; 
-}
-   
-::-webkit-scrollbar-thumb {
-    background: transparent; 
-}
-  
-::-webkit-scrollbar-thumb:hover {
-    background: transparent; 
-}
-
-.container {
-    min-height: 100vh;
-    width: 100%;
-    display: flex; 
-    align-items: center;
-    justify-content: center; 
+li { 
+    list-style: none;
 }
 
 img {
@@ -45,50 +34,26 @@ img {
     object-fit: cover;
 }
 
-p {
-    color: white; 
-    font-size: 1.4rem; 
-    margin-top: 5px;
-    line-height: 2rem;
-    font-weight: 300;
-    letter-spacing: .05rem; 
+::-webkit-scrollbar {
+    width: 1em;
+}
+  
+::-webkit-scrollbar-track {
+    background: var(--secondary); 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: var(--primary); 
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #4690cc; 
 }
 
-.section-title {
-    font-size: 4rem; 
-    font-weight: 300; 
-    color: white; 
-    margin-bottom: 5px;
-    text-transform: uppercase; 
-    letter-spacing: .2rem;
-    text-align: center;
-}
-
-.cta {
-    display: inline-block; 
-    padding: 10px 30px; 
-    color: white; 
-    background-color: transparent; 
-    border: 2px solid white; 
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: .1rem;
-    margin-top: 20px;
-    transition: .3s ease;
-    transition-property: background-color, color;
-} 
-
-.cta:hover {
-    color: white; 
-    background-color: #1F2833; 
-}
-
-.brand h1{
-    font-size: 3rem; 
-    text-transform: uppercase; 
-    color: white;
-}
-
-.brand h1 span {
-    color: #66FCF1; 
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
 }
