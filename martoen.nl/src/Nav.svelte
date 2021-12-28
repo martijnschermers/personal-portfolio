@@ -1,7 +1,7 @@
 <script>
     import { onMount } from 'svelte';
-    import VanillaTilt from 'vanilla-tilt';
-
+    import NavCard from './NavCard.svelte';
+    
     let visible = false;
     onMount(() => visible = true); 
 
@@ -41,7 +41,9 @@
 
     <div class="nav-list">
         {#if visible}
-            <div class="nav-card" data-tilt>
+            <NavCard/>
+
+            <!-- <div class="nav-card" data-tilt>
                 <img src="images/coding.jpeg" alt="coding">
                 <div class="content">
                     <h2>Updates</h2>
@@ -80,7 +82,7 @@
                 </p>
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <a href="#contact">More info...</a>
-            </div>
+            </div> -->
         {/if}
     </div>
 </div>
@@ -104,22 +106,7 @@
         padding-top: .2em;
     }
 
-    h2 { 
-        text-align: center; 
-        font-size: 2rem; 
-    }
-
-    p { 
-        margin-top: .5em;
-        text-align: left; 
-        font-size: 1.2rem; 
-    }
-
-    a, i {
-        margin-top: .5em;
-        padding-left: .2em;
-        font-size: 1.1rem; 
-    }
+   
 
     .nav-list {
         display: flex; 
@@ -127,25 +114,5 @@
         align-items: center;
     }
 
-    .nav-card {
-        margin-block: 1.5em;
-        border-radius: .8em; 
-        padding: .8em;
-        width: 80%; 
-        box-shadow: -.5em .5em var(--white);
-        overflow: hidden;
-        position: relative;
-    }
-
-    .nav-card img {
-        opacity: .6;
-        position: absolute;
-        left: 0; 
-        top: 0; 
-        width: 100%;
-    }
-
-    .content {
-        position: relative;
-    }
+    
 </style>
