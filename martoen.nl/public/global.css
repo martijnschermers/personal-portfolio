@@ -10,13 +10,15 @@
     --white: #fff;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-size: 13px; 
     font-family: 'Lato', Courier, monospace;
     background-color: var(--secondary); 
     color: var(--white);
-    scroll-behavior: smooth;
 }
 
 a {
