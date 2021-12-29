@@ -66,6 +66,7 @@
         padding-left: 0.2em;
         font-size: 1.1rem;
     }
+    
     .nav-card {
         margin-block: 1.5em;
         border-radius: 0.8em;
