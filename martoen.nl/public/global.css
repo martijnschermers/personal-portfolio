@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-size: 13px; 
+    font-size: 0.8em; 
     font-family: 'Lato', Courier, monospace;
     background-color: var(--secondary); 
     color: var(--white);
