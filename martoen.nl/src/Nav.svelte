@@ -33,7 +33,7 @@
   <div class="brand">
     <a href="#header">
       {#if visible}
-        <h1 transition:typewriter>ms-arrow</h1>
+        <h1 transition:typewriter>martijn</h1>
       {/if}
     </a>
   </div>
@@ -61,7 +61,7 @@
 	}
 
 	li {
-		margin-inline: 2em;
+		margin-inline: 1em;
 		font-size: 2rem; 
 	}
 
