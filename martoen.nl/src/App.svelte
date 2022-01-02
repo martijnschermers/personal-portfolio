@@ -3,14 +3,14 @@
 	import About from './About.svelte';
 	import Contact from './Contact.svelte';
 	import Footer from './Footer.svelte';
-	import Projecten from './Projecten.svelte';
+	import Projects from './Projects.svelte';
 	import Updates from './Updates.svelte';
 </script>
 
 <main>
 	<Nav/>
 	<Updates/>
-	<Projecten/>
+	<Projects/>
 	<About/>
 	<Contact/>
 	<Footer/>
