@@ -12,7 +12,7 @@
     });
 
     let data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     if (response.status >= 200 && response.status < 400) {
       data.forEach((repo) => {
@@ -28,7 +28,7 @@
             let readme = await response.text();
 
             let html = converter.makeHtml(readme);
-            console.log(html);
+            // console.log(html);
             project.innerHTML = html;
 
             link.href = repo.html_url;
