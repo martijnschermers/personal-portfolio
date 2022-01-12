@@ -3,9 +3,6 @@
   let count = 0;
   let commits = [];
 
-  const container = document.createElement("div");
-  container.setAttribute("id", "update-cards"); 
-
   (async function () {
     let response = await fetch(url, {
       method: "GET",
@@ -19,32 +16,9 @@
     if (response.status >= 200 && response.status < 400) {
       data.forEach(function (i) {
         if ((data.type = "PushEvent" && count < 4)) {
-          let card = document.createElement("div"); 
-          card.setAttribute("class", "update");
-
           if (i.payload.commits !== undefined) {
             i.payload.commits.forEach(function (commit) {
-              // const img = document.querySelector(`.update-${count} img`);
-              // img.src = i.actor.avatar_url;
-
-              commits.push(commit);
-
-              let header = document.createElement("div");
-              header.setAttribute("class", "header");
-
-              let content = document.createElement("div");
-              content.setAttribute("class", "content"); 
-
-              let title = document.createElement("h2"); 
-              title.textContent = i.repo.name.split('/')[1]; 
-
-              let description = document.createElement("p");
-              description.textContent = commit.message;
-
-              let link = document.createElement("a"); 
-              link.textContent = "Github"; 
-
-              let time = document.createElement("time"); 
+              let placeholder = [];
 
               (async function () {
                 let response = await fetch(commit.url, {
@@ -55,26 +29,18 @@
                 });
                 let commitData = await response.json();
 
-                link.href = commitData.html_url;
-                console.log(count);
-                commits.splice(i, 0, commitData.html_url);
-
                 let date = new Date(commitData.commit.committer.date);
-                time.textContent = date.toString().substring(4, 21);
-                time.datetime = commitData.commit.committer.date;
+
+                console.log(count);
+
+                console.log(placeholder);
+
+                placeholder.push(date.toString().substring(4, 21));
+
+                commits.push(placeholder);
               })();
-
-              header.appendChild(title);
-              content.appendChild(description);
-
-              content.appendChild(link);
-              content.appendChild(time);
-
-              card.appendChild(header);
-              card.appendChild(content);
             });
 
-            container.appendChild(card);
             count++;
           }
         }
@@ -102,13 +68,16 @@
       {#each commits as commit}
         <div class="update-card">
           <div class="header">
-            {commit.message}
+            {commit}
           </div>
 
           <div class="content">
 
           </div>
         </div>
+
+      {:else} 
+        <p>There is no data available</p>
       {/each}
     </div>
 
@@ -187,7 +156,7 @@
     transition: 0.3s linear;
   } */
 
-  .update {
+  .update-card {
     padding: 1.5em;
     margin: 1.5em;
     border-radius: 1.2em;
@@ -203,15 +172,15 @@
     margin-block: 0.7em;
   }
 
-  h2 {
+  /* h2 {
     font-size: 1.6rem;
-  }
+  } */
 
   h1 {
     font-size: 2.5rem;
   }
 
-  a {
+  /* a {
     font-size: 1.2rem;
     font-weight: bold;
   }
@@ -219,7 +188,7 @@
   time {
     font-size: 1rem;
     margin-left: 2.5em;
-  }
+  } */
 
   /* img { 
         object-fit: contain; 
