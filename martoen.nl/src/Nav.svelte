@@ -29,30 +29,32 @@
   }
 </script>
 
-<div class="header">
-  <div class="brand">
-    <a href="#header">
+<main>
+  <div class="header">
+    <div class="brand">
+      <a href="#header">
+        {#if visible}
+          <h1 transition:typewriter>martijn</h1>
+        {/if}
+      </a>
+    </div>
+
+    <div class="nav-list">
       {#if visible}
-        <h1 transition:typewriter>martijn</h1>
+      <div class="nav">
+        <ul>
+          <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/></a></li>
+          <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /></a></li>
+          <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/></a></li>
+          <li><a href="#contact"><i class="fa fa-phone" aria-hidden="true"/></a></li>
+        </ul>
+      </div>
+
+        <NavCard />
       {/if}
-    </a>
+    </div>
   </div>
-
-  <div class="nav-list">
-    {#if visible}
-		<div class="nav">
-      <ul>
-        <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/></a></li>
-        <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /></a></li>
-        <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/></a></li>
-        <li><a href="#contact"><i class="fa fa-phone" aria-hidden="true"/></a></li>
-      </ul>
-		</div>
-
-			<NavCard />
-    {/if}
-  </div>
-</div>
+</main>
 
 <style>
 	.nav ul{
@@ -91,5 +93,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 </style>
