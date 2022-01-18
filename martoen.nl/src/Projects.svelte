@@ -12,9 +12,8 @@
     });
 
     let data = await response.json();
-    // console.log(data);
 
-    if (response.status >= 200 && response.status < 400) {
+    if (response.ok) {
       data.forEach((repo) => {
         if (count < 3) {
           let name = repo.name;
