@@ -3,7 +3,7 @@
   let commits = [];
   let count = 0;
 
-  async function fetchData() {
+  (async function () {
     let response = await fetch(url, {
       method: "GET",
       headers: new Headers({
@@ -13,11 +13,11 @@
     let data = await response.json();
 
     if (response.ok) {
-      data.forEach(function (i) {
-        if ((data.type = "PushEvent" && count < 4)) {
+      data.forEach(async function (i) {
+        if (data.type = "PushEvent" && count < 4) {
           if (i.payload.commits !== undefined) {
-            i.payload.commits.forEach(function (commit) {
-              let placeholder = [];
+            await Promise.all(i.payload.commits.map(async function(commit) {
+              let placeholder = {};
 
               (async function () {
                 let response = await fetch(commit.url, {
@@ -28,28 +28,24 @@
                 });
                 let commitData = await response.json();
 
-                // placeholder.push(commit);
+                placeholder.commit = commit;
 
-                // let date = new Date(commitData.commit.committer.date);
-                // placeholder.push(date.toString().substring(4, 21));
-                // placeholder.push(commitData.html_url);
+                let date = new Date(commitData.commit.committer.date);
+                placeholder.date = (date.toString().substring(4, 21));
+                placeholder.html_url = commitData.html_url;
 
-                placeholder.push("Test");
-
-                commits.push(placeholder);
+                commits = [...commits, placeholder];
               })();
-            });
-            count++;
+              count++;
+            }))
           }
         }
       });
-      console.log(commits);
-    return commits;
     } else {
       const errorMessage = document.querySelector(".updates p");
       errorMessage.textContent = data.message;
     }
-  };
+  })();
 </script>
 
 <main>
@@ -65,21 +61,20 @@
     </div>
 
     <div id="update-cards">
-      {#await fetchData()}
-        <p>loading</p>
-      {:then commits}
-        {#each commits as commit}
-          <div class="update-card">
-            <div class="header">
-              {commit}
-            </div>
-
-            <div class="content" />
+      {#each commits as commit}
+        <div class="update-card">
+          <div class="header">
+            <h2>{commit.commit.author.name}</h2>
           </div>
-        {:else}
-          <p>There is no data available</p>
-        {/each}
-      {/await}
+
+          <div class="content"/>
+            <p>{commit.commit.message}</p>
+            <a href="{commit.html_url}"><i class="fa fa-link"></i> Github</a>
+            <time>{commit.date}</time>
+          </div>
+      {:else}
+        <p>There is no data available</p>
+      {/each}
     </div>
   </div>
 </main>
@@ -100,7 +95,7 @@
     border-radius: 1.2em;
     box-shadow: 0.5em 0.5em var(--white);
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    width: 80%;
+    width: fit-content;
     max-width: 756px;
     transition: 0.3s linear;
   }
@@ -110,27 +105,26 @@
     margin-block: 0.7em;
   }
 
-  /* h2 {
+  h2 {
     font-size: 1.6rem;
-  } */
+  }
 
   h1 {
     font-size: 2.5rem;
   }
 
-  /* a {
+  a {
     font-size: 1.2rem;
     font-weight: bold;
+    transition: 0.3s linear;
+  }
+  
+  a:hover {
+    text-decoration: underline solid var(--secondary) 0.25rem;
   }
 
   time {
     font-size: 1rem;
     margin-left: 2.5em;
-  } */
-
-  /* img {
-    object-fit: contain;
-    width: 3em;
-    border-radius: 50%;
-  } */
+  }
 </style>
