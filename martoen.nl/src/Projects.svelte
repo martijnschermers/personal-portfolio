@@ -81,6 +81,7 @@
 
 <style>
   .projects {
+    margin-top: 5em;
     flex-direction: column;
   }
 
