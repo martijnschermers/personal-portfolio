@@ -19,6 +19,9 @@ body {
     font-family: 'Lato', Courier, monospace;
     background-color: var(--secondary); 
     color: var(--white);
+    /* background-image: url("/images/bg.svg");
+    background-repeat: no-repeat;
+    background-size: cover; */
 }
 
 a {

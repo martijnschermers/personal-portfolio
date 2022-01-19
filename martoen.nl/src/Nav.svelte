@@ -49,8 +49,6 @@
           <li><a href="#contact"><i class="fa fa-phone" aria-hidden="true"/></a></li>
         </ul>
       </div>
-
-        <NavCard />
       {/if}
     </div>
   </div>
@@ -72,18 +70,16 @@
 	}
 
   .header {
-    background-image: url("/images/bg.svg");
+    /* background-image: url("/images/bg.svg");
     background-size: cover;
-    background-position: center;
+    background-position: center; */
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
   }
 
   h1 {
-    text-align: center;
     font-size: 3rem;
     text-transform: uppercase;
     padding-top: 0.2em;
