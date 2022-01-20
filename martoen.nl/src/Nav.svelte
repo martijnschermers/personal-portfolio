@@ -61,7 +61,7 @@
 	}
 
 	li {
-		margin-inline: 1em;
+		margin-inline: .8em;
 		font-size: 2rem; 
 	}
 
