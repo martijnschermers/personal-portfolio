@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Nav from './Nav.svelte';
 	import About from './About.svelte';
 	import Contact from './Contact.svelte';
