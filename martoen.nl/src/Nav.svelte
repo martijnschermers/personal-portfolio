@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import NavCard from "./NavCard.svelte";
 
   let visible = false;
   onMount(() => (visible = true));
@@ -31,27 +30,22 @@
 
 <main>
   <div class="header">
-    <div class="brand">
-      <a href="#header">
-        {#if visible}
-          <h1 transition:typewriter>martijn</h1>
-        {/if}
-      </a>
-    </div>
+      <div class="brand">
+        <a href="#header">
+          {#if visible}
+            <h1 transition:typewriter>martijn</h1>
+          {/if}
+        </a>
+      </div>
 
-    <div class="nav-list">
-      {#if visible}
       <div class="nav">
         <ul>
-          <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/></a></li>
-          <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /></a></li>
-          <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/></a></li>
-          <li><a href="#contact"><i class="fa fa-phone" aria-hidden="true"/></a></li>
+          <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
+          <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
+          <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
         </ul>
       </div>
-      {/if}
     </div>
-  </div>
 </main>
 
 <style>
@@ -62,12 +56,15 @@
 
 	li {
 		margin-inline: .8em;
-		font-size: 2rem; 
+		font-size: 1.8rem; 
+    opacity: .75;
+    transition: linear 0.3s;
+    text-transform: uppercase;
 	}
 
-	li::after {
-		content: "";
-	}
+  li:hover {
+    opacity: 1;
+  }
 
   .header {
     /* background-image: url("/images/bg.svg");
@@ -75,20 +72,31 @@
     background-position: center; */
 
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
     padding-top: 0.2em;
   }
 
-  .nav-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    li {
+      opacity: 1;
+    }
+
+    li span {
+      display: none;
+    }
   }
 </style>
