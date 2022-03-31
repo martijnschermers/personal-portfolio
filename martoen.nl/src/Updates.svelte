@@ -14,30 +14,32 @@
 
     if (response.ok) {
       data.forEach(async function (i) {
-        if (data.type = "PushEvent" && count < 4) {
+        if ((data.type = "PushEvent" && count < 4)) {
           if (i.payload.commits !== undefined) {
-            await Promise.all(i.payload.commits.map(async function(commit) {
-              let placeholder = {};
+            await Promise.all(
+              i.payload.commits.map(async function (commit) {
+                let placeholder = {};
 
-              (async function () {
-                let response = await fetch(commit.url, {
-                  method: "GET",
-                  headers: new Headers({
-                    "Content-Type": "application/json",
-                  }),
-                });
-                let commitData = await response.json();
+                (async function () {
+                  let response = await fetch(commit.url, {
+                    method: "GET",
+                    headers: new Headers({
+                      "Content-Type": "application/json",
+                    }),
+                  });
+                  let commitData = await response.json();
 
-                placeholder.commit = commit;
+                  placeholder.commit = commit;
 
-                let date = new Date(commitData.commit.committer.date);
-                placeholder.date = (date.toString().substring(4, 21));
-                placeholder.html_url = commitData.html_url;
+                  let date = new Date(commitData.commit.committer.date);
+                  placeholder.date = date.toString().substring(4, 21);
+                  placeholder.html_url = commitData.html_url;
 
-                commits = [...commits, placeholder];
-              })();
-              count++;
-            }))
+                  commits = [...commits, placeholder];
+                })();
+                count++;
+              })
+            );
           }
         }
       });
@@ -50,7 +52,7 @@
 
 <main>
   <div id="updates" class="updates container">
-    <div class="updates-top">
+    <div class="updates-text">
       <h1>Updates</h1>
       <p>
         Op dit gedeelte van de website zijn mijn meest recente Github pushes te
@@ -66,12 +68,11 @@
           <div class="header">
             <h2>{commit.commit.author.name}</h2>
           </div>
-
-          <div class="content"/>
-            <p>{commit.commit.message}</p>
-            <a href="{commit.html_url}"><i class="fa fa-link"></i> Github</a>
-            <time>{commit.date}</time>
-          </div>
+        
+          <p>{commit.commit.message}</p>
+          <a href={commit.html_url}><i class="fa fa-link" /> Github</a>
+          <time>{commit.date}</time>
+        </div>
       {:else}
         <p>There is no data available</p>
       {/each}
@@ -85,7 +86,7 @@
     flex-direction: column;
   }
 
-  .updates-top {
+  .updates-text {
     width: 80%;
   }
 
@@ -96,7 +97,6 @@
     box-shadow: 0.5em 0.5em var(--white);
     background: linear-gradient(45deg, var(--primary), var(--secondary));
     width: fit-content;
-    max-width: 756px;
     transition: 0.3s linear;
   }
 
@@ -109,18 +109,35 @@
     font-size: 1.6rem;
   }
 
-  h1 {
-    font-size: 2.5rem;
-  }
-
   a {
+    position: relative;
     font-size: 1.2rem;
     font-weight: bold;
     transition: 0.3s linear;
   }
-  
-  a:hover {
-    text-decoration: underline solid var(--secondary) 0.25rem;
+
+  /* a:hover {
+    transform: scale(2.1);
+    text-decoration: underline solid var(--white) 0.25rem;
+  } */
+
+  a::before{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a:hover::before{
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
   }
 
   time {
