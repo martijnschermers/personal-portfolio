@@ -3,7 +3,7 @@
 
 <div id="projects" class="projects container">
   <h1>Projecten</h1>
-  <div class="project-card-0">
+  <div class="project-card">
     <div class="header">
       <h2>JavaScript API</h2>
     </div>
@@ -24,10 +24,6 @@
     flex-direction: column;
   }
 
-  h1 {
-    font-size: 2.5rem;
-  }
-
   h2 {
     font-size: 1.75rem;
   }
@@ -42,13 +38,12 @@
     font-weight: bold;
   }
 
-  div[class^="project-card"] {
+  .project-card {
     padding: 1.5em;
     border-radius: 1.2em;
     box-shadow: 0.5em 0.5em var(--white);
     background: linear-gradient(45deg, var(--primary), var(--secondary));
-    width: fit-content;
-    max-width: 1000px;
+    width: 80%;
     transition: 0.3s linear;
   }
 
