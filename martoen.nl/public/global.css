@@ -19,9 +19,6 @@ body {
     font-family: 'Lato', Courier, monospace;
     background-color: var(--secondary); 
     color: var(--white);
-    /* background-image: url("/images/bg.svg");
-    background-repeat: no-repeat;
-    background-size: cover; */
 }
 
 a {
@@ -38,6 +35,15 @@ img {
     height: 100%; 
     width: 100%;
     object-fit: cover;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+    margin-bottom: .5rem;
 }
 
 ::-webkit-scrollbar {
