@@ -44,7 +44,7 @@
         }
       });
     } else {
-      const errorMessage = document.querySelector(".updates p");
+      let errorMessage = document.querySelector(".updates p");
       errorMessage.textContent = data.message;
     }
   })();
@@ -55,23 +55,22 @@
     <div class="updates-text">
       <h1>Updates</h1>
       <p>
-        Op dit gedeelte van de website zijn mijn meest recente Github pushes te
-        zien. Deze updates zijn realtime, omdat er een verbinding is met de
-        Github API. De API haalt alle push events op die binnenkomen op mijn
-        openbare repositories!
+        Commits naar mijn openbare Github repositories: 
       </p>
     </div>
 
     <div id="update-cards">
       {#each commits as commit}
-        <div class="update-card">
+        <div class="card">
           <div class="header">
             <h2>{commit.commit.author.name}</h2>
           </div>
         
           <p>{commit.commit.message}</p>
-          <a href={commit.html_url}><i class="fa fa-link" /> Github</a>
-          <time>{commit.date}</time>
+          <div class="content">
+            <a href={commit.html_url}><i class="fa fa-link" /> Github</a>
+            <time>{commit.date}</time>
+          </div>
         </div>
       {:else}
         <p>There is no data available</p>
@@ -81,63 +80,15 @@
 </main>
 
 <style>
-  .updates {
-    margin-top: 5em;
-    flex-direction: column;
-  }
-
   .updates-text {
-    width: 80%;
-  }
-
-  .update-card {
-    padding: 1.5em;
-    margin: 1.5em;
-    border-radius: 1.2em;
-    box-shadow: 0.5em 0.5em var(--white);
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
     width: fit-content;
-    transition: 0.3s linear;
+    text-align: center;
+    margin-inline: 1.5rem;
   }
 
-  p {
-    font-size: 1.2rem;
-    margin-block: 0.7em;
-  }
-
-  h2 {
-    font-size: 1.6rem;
-  }
-
-  a {
-    position: relative;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transition: 0.3s linear;
-  }
-
-  /* a:hover {
-    transform: scale(2.1);
-    text-decoration: underline solid var(--white) 0.25rem;
-  } */
-
-  a::before{
-    content: '';
-    position: absolute;
-    bottom: -1px;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--white);
-    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    a:hover::before{
-      left: 0;
-      right: auto;
-      width: 100%;
-    }
+  .content {
+    display: flex;
+    justify-content: space-between;
   }
 
   time {
