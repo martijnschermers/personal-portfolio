@@ -50,7 +50,7 @@
 
 <style>
 	.nav ul{
-		margin-block: 2em; 
+		margin-block: 1em; 
 		display: flex;
 	}
 
@@ -67,10 +67,6 @@
   }
 
   .header {
-    /* background-image: url("/images/bg.svg");
-    background-size: cover;
-    background-position: center; */
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -79,7 +75,7 @@
   h1 {
     font-size: 3.5rem;
     text-transform: uppercase;
-    padding-top: 0.2em;
+    padding: 0.5rem 0 0 1.5rem;
   }
 
   @media (max-width: 768px) {
@@ -88,6 +84,7 @@
     }
 
     h1 {
+      padding: 0.5rem 0 0 0;
       font-size: 2.5rem;
     }
 
