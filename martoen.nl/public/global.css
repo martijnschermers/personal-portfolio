@@ -4,10 +4,26 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    --primary: #4FACF7; 
-    --secondary: #001220; 
-    --black: #0B0C10; 
+    --primary: #4FACF7;
+    --secondary: #001220;
+    --black: #0B0C10;
     --white: #fff;
+}
+
+::-webkit-scrollbar {
+    width: .75em;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4690cc;
 }
 
 html {
@@ -15,24 +31,18 @@ html {
 }
 
 body {
-    font-size: 0.8em; 
+    font-size: 0.8em;
     font-family: 'Lato', Courier, monospace;
-    background-color: var(--secondary); 
+    background-color: var(--secondary);
     color: var(--white);
 }
 
-a {
-    font-family: 'Lato', Courier, monospace;
-    text-decoration: none;
-    color: var(--white);
-}
-
-li { 
+li {
     list-style: none;
 }
 
 img {
-    height: 100%; 
+    height: 100%;
     width: 100%;
     object-fit: cover;
 }
@@ -43,29 +53,77 @@ h1 {
     text-transform: uppercase;
     text-align: center;
     color: var(--white);
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
+    transform: skew(-5deg);
+    text-shadow: 3px 3px 0 var(--primary);
+    letter-spacing: .25rem;
 }
 
-::-webkit-scrollbar {
-    width: 1em;
+h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
 }
-  
-::-webkit-scrollbar-track {
-    background: var(--secondary); 
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
-   
-::-webkit-scrollbar-thumb {
-    background: var(--primary); 
+
+a {
+    position: relative;
+    font-family: 'Lato', Courier, monospace;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: 0.3s linear;
 }
-  
-::-webkit-scrollbar-thumb:hover {
-    background: #4690cc; 
+
+a::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--white);
+    transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .container {
     min-height: 100vh;
     width: 100%;
-    display: flex; 
+    display: flex;
     align-items: center;
-    justify-content: center; 
+    justify-content: center;
+    flex-direction: column;
+}
+
+.card {
+    padding: 1.5em;
+    margin: 1.5em;
+    border-radius: 1.2em;
+    box-shadow: 0.5em 0.5em 0.5em var(--primary);
+    background: var(--secondary);
+    width: fit-content;
+    transition: 0.3s linear;
+}
+
+.card:hover {
+    box-shadow: -0.5em -0.5em 0.5em var(--primary);
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    a:hover::before {
+        left: 0;
+        right: auto;
+        width: 100%;
+    }
 }
