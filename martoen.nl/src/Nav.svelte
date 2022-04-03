@@ -74,7 +74,6 @@
 
   h1 {
     font-size: 3.5rem;
-    text-transform: uppercase;
     padding: 0.5rem 0 0 1.5rem;
   }
 
