@@ -28,25 +28,21 @@
   }
 </script>
 
-<main>
-  <div class="header">
-      <div class="brand">
-        <a href="#header">
-          {#if visible}
-            <h1 transition:typewriter>martijn</h1>
-          {/if}
-        </a>
-      </div>
+<div id="header" class="header">
+    <a href="#header">
+      {#if visible}
+        <h1 transition:typewriter>martijn</h1>
+      {/if}
+    </a>
 
-      <div class="nav">
-        <ul>
-          <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
-          <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
-          <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
-        </ul>
-      </div>
+    <div class="nav">
+      <ul>
+        <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
+        <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
+        <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
+      </ul>
     </div>
-</main>
+  </div>
 
 <style>
 	.nav ul{
@@ -61,6 +57,10 @@
     transition: linear 0.3s;
     text-transform: uppercase;
 	}
+
+  a {
+    font-size: 1.8rem;
+  }
 
   li:hover {
     opacity: 1;
