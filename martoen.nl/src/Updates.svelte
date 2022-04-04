@@ -50,49 +50,38 @@
   })();
 </script>
 
-<main>
-  <div id="updates" class="updates container">
-    <div class="updates-text">
-      <h1>Updates</h1>
-      <p>
-        Commits naar mijn openbare Github repositories: 
-      </p>
-    </div>
+<div id="updates" class="container">
+  <h1>Updates</h1>
+  <p class="section-info">
+    Commits naar mijn openbare Github repositories: 
+  </p>
 
-    <div id="update-cards">
-      {#each commits as commit}
-        <div class="card">
-          <div class="header">
-            <h2>{commit.commit.author.name}</h2>
-          </div>
-        
-          <p>{commit.commit.message}</p>
-          <div class="content">
-            <a href={commit.html_url}><i class="fa fa-link" /> Github</a>
-            <time>{commit.date}</time>
-          </div>
-        </div>
-      {:else}
-        <p>There is no data available</p>
-      {/each}
+  {#each commits as commit}
+    <div class="card">
+      <h2>{commit.commit.author.name}</h2>
+    
+      <p>{commit.commit.message}</p>
+      <div class="content">
+        <a href={commit.html_url}><i class="fa fa-link" /> Github</a>
+        <time>{commit.date}</time>
+      </div>
     </div>
-  </div>
-</main>
+  {:else}
+    <p>Er zijn geen recente commits beschikbaar.</p>
+  {/each}
+</div>
 
 <style>
-  .updates-text {
-    width: fit-content;
-    text-align: center;
-    margin-inline: 1.5rem;
-  }
-
   .content {
     display: flex;
     justify-content: space-between;
   }
 
+  .section-info {
+    text-align: center;
+  }
+
   time {
-    font-size: 1rem;
-    margin-left: 2.5em;
+    font-size: 1.1rem;
   }
 </style>
