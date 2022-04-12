@@ -28,23 +28,40 @@
   }
 </script>
 
-<div id="header" class="header">
-    <a href="#header">
-      {#if visible}
-        <h1 transition:typewriter>martijn</h1>
-      {/if}
-    </a>
+<div id="header" class="header container">
+  {#if visible}
+    <h1 transition:typewriter>martijn</h1>
+  {/if}
 
-    <div class="nav">
-      <ul>
-        <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
-        <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
-        <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
-      </ul>
-    </div>
+  <div class="nav">
+    <ul>
+      <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
+      <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
+      <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
+    </ul>
   </div>
 
+  {#if visible}
+    <div class="welcome">
+      <h2 transition:typewriter="{{speed : 1.5}}">Welkom op mijn website!</h2>
+      <p transition:typewriter="{{speed : 1.5}}">
+        Hier vind je mijn recente werk, projecten en informatie over mij. 
+      </p>
+    </div>
+  {/if}
+</div>
+
 <style>
+  .header {
+    display: flex;
+    align-items: center;
+    background-image: url('/images/bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+  }
+
 	.nav ul{
 		margin-block: 1em; 
 		display: flex;
@@ -64,12 +81,6 @@
 
   li:hover {
     opacity: 1;
-  }
-
-  .header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
   }
 
   h1 {
