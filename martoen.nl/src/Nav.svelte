@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { fly } from "svelte/transition";
 
   let visible = false;
   onMount(() => (visible = true));
@@ -42,9 +43,9 @@
   </div>
 
   {#if visible}
-    <div class="welcome">
-      <h2 transition:typewriter="{{speed : 1.5}}">Welkom op mijn website!</h2>
-      <p transition:typewriter="{{speed : 1.5}}">
+    <div transition:fly={{ y: 500, duration: 2000 }} class="welcome">
+      <h2>Welkom op mijn website!</h2>
+      <p>
         Hier vind je mijn recente werk, projecten en informatie over mij. 
       </p>
     </div>
@@ -86,6 +87,14 @@
   h1 {
     font-size: 3.5rem;
     padding: 0.5rem 0 0 1.5rem;
+  }
+
+  .welcome {
+    padding: 1rem;
+  }
+
+  h2, p {
+    text-align: center;
   }
 
   @media (max-width: 768px) {
