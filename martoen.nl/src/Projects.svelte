@@ -14,7 +14,7 @@
 
       <p>
         Dit project is een website gemaakt met het Django framework. Deze
-        website laat de roosters zien van mij en mijn zusjes.
+        website laat de roosters zien van mij en mijn naasten.
       </p>
       <a href="https://schooster.nl/"><i class="fa fa-link" /> Website</a>
     </div>
