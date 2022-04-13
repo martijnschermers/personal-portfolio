@@ -1,14 +1,14 @@
 <script>
   let icons = [];
 
-  icons.push("fa fa-github");
-  icons.push("fa fa-linkedin");
-  icons.push("fa fa-steam");
+  icons.push({ class: "fa fa-github", link: "https://github.com/martijnschermers", label: "Github profile link" });
+  icons.push({ class: "fa fa-linkedin", link: "https://www.linkedin.com/in/martijn-schermers/", label: "LinkedIn profile link" });
+  icons.push({ class: "fa fa-steam", link: "https://steamcommunity.com/profiles/76561198329654915/", label: "Steam profile link" });
 </script>
 
 <footer>
   {#each icons as icon}
-    <i class={icon}/>
+    <a href="{icon.link}" aria-label="{icon.label}"><i class={icon.class}/></a>
   {/each}
 </footer>
 
@@ -17,7 +17,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(-45deg, var(--primary), var(--secondary));
   }
 
   i {
