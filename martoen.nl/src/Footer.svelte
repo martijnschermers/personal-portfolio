@@ -1,5 +1,5 @@
 <script>
-  const icons = [];
+  let icons = [];
 
   icons.push("fa fa-github");
   icons.push("fa fa-linkedin");
