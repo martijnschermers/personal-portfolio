@@ -1,45 +1,53 @@
 <script>
   import { onMount } from "svelte";
-  import { fly } from "svelte/transition";
+	import { fade, draw, fly } from 'svelte/transition';
+	import { shape } from './shape.js';
 
   let visible = false;
   onMount(() => (visible = true));
 
-  function typewriter(node, { speed = 0.8 }) {
-    const valid =
-      node.childNodes.length === 1 &&
-      node.childNodes[0].nodeType === Node.TEXT_NODE;
-
-    if (!valid) {
-      throw new Error(
-        `This transition only works on elements with a single text node child`
-      );
+  let icon = "fa fa-moon-o";
+  function toggle() {
+    window.document.body.classList.toggle('dark-mode');
+    if (window.document.body.classList.contains('dark-mode')) {
+      icon = "fa fa-sun-o";
+    } else {
+      icon = "fa fa-moon-o";
     }
-
-    const text = node.textContent;
-    const duration = text.length / (speed * 0.01);
-
-    return {
-      duration,
-      tick: (t) => {
-        const i = Math.trunc(text.length * t);
-        node.textContent = text.slice(0, i);
-      },
-    };
   }
+  
 </script>
 
 <div id="header" class="header container">
-  {#if visible}
-    <h1 transition:typewriter>martijn</h1>
-  {/if}
+  <div class="nav-bar">
+    {#if visible}
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 124">
+      <g out:fade="{{duration: 200}}" opacity=0.2>
+        <image
+          in:draw="{{duration: 1000}}"
+          style="stroke:#ff3e00; stroke-width: 1.5"
+          xlink:href={shape}
+        />
+      </g>
+    </svg> -->
 
-  <div class="nav">
-    <ul>
-      <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
-      <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
-      <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
-    </ul>
+      <img src="./images/logo.svg" alt="Logo">
+    {/if}
+
+    <div class="middle-nav">
+      <ul>
+        <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
+        <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
+        <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
+      </ul>
+    </div>
+
+    <div class="side-nav">
+      <ul>
+        <li><a href="https://github.com/martijnschermers"><i class="fa fa-github"></i></a></li>
+        <li><button on:click={toggle}><i class="{icon}"></i></button></li>
+      </ul>
+    </div>
   </div>
 
   {#if visible}
@@ -53,22 +61,12 @@
 </div>
 
 <style>
-  .header {
-    display: flex;
-    align-items: center;
-    background-image: url('/images/bg.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    justify-content: flex-start;
-  }
-
-	.nav ul{
+  ul {
 		margin-block: 1em; 
 		display: flex;
 	}
 
-	li {
+  li {
 		margin-inline: .8em;
 		font-size: 1.8rem; 
     opacity: .75;
@@ -76,42 +74,56 @@
     text-transform: uppercase;
 	}
 
-  a {
-    font-size: 1.8rem;
-  }
-
   li:hover {
     opacity: 1;
   }
 
-  h1 {
-    font-size: 3.5rem;
-    padding: 0.5rem 0 0 1.5rem;
+  img {
+    width: 100px;
+    height: 100px;
+    padding: 1em;
+  }
+
+  /* path {
+		fill: white;
+		opacity: 1;
+	} */
+
+  a {
+    font-size: 1.8rem;
+  }
+
+  h2, 
+  p {
+    text-align: center;
+  }
+
+  .header {
+    display: flex;
+    background-image: url('/images/bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: flex-start;
+  }
+
+  .nav-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .welcome {
     padding: 1rem;
   }
 
-  h2, p {
-    text-align: center;
-  }
-
   @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-    }
-
-    h1 {
-      padding: 0.5rem 0 0 0;
-      font-size: 2.5rem;
-    }
-
     li {
       opacity: 1;
     }
 
-    li span {
+    .middle-nav {
       display: none;
     }
   }
