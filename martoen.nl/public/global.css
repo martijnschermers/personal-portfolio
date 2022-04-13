@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
 
 * {
     padding: 0;
@@ -32,19 +32,13 @@ html {
 
 body {
     font-size: 0.8em;
-    font-family: 'Lato', Courier, monospace;
+    font-family: "Lato", Courier, monospace;
     background-color: var(--secondary);
     color: var(--white);
 }
 
 li {
     list-style: none;
-}
-
-img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
 }
 
 h1 {
@@ -73,7 +67,7 @@ p {
 
 a {
     position: relative;
-    font-family: 'Lato', Courier, monospace;
+    font-family: "Lato", Courier, monospace;
     text-decoration: none;
     color: var(--white);
     font-size: 1.2rem;
@@ -82,7 +76,7 @@ a {
 }
 
 a::before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -1px;
     right: 0;
@@ -90,6 +84,11 @@ a::before {
     height: 2px;
     background-color: var(--white);
     transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+button {
+    all: unset; 
+    cursor: pointer;
 }
 
 .container {
