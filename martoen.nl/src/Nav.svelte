@@ -36,16 +36,16 @@
 
     <div class="middle-nav">
       <ul>
-        <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> <span>Updates</span></a></li>
-        <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> <span>Projecten</span></a></li>
-        <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> <span>About</span></a></li>
+        <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> Updates</a></li>
+        <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> Projecten</a></li>
+        <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> About</a></li>
       </ul>
     </div>
 
     <div class="side-nav">
       <ul>
-        <li><a href="https://github.com/martijnschermers"><i class="fa fa-github"></i></a></li>
-        <li><button on:click={toggle}><i class="{icon}"></i></button></li>
+        <li><a href="https://github.com/martijnschermers" aria-label="Github profile link"><i class="fa fa-github"></i></a></li>
+        <li><button on:click={toggle} aria-label="Darkmode toggle"><i class="{icon}"></i></button></li>
       </ul>
     </div>
   </div>
