@@ -28,7 +28,6 @@
 
   i {
     font-size: 2rem;
-    color: var(--white);
     margin: 1rem;
   }
 
