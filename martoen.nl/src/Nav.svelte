@@ -36,9 +36,9 @@
 
     <div class="middle-nav">
       <ul>
-        <li><a href="#updates"><i class="fa fa-wrench" aria-hidden="true"/> Updates</a></li>
-        <li><a href="#projects"><i class="fa fa-cog" aria-hidden="true" /> Projecten</a></li>
-        <li><a href="#about"><i class="fa fa-info" aria-hidden="true"/> About</a></li>
+        <li><a href="#updates" class="underline"><i class="fa fa-wrench" aria-hidden="true"/> Updates</a></li>
+        <li><a href="#projects" class="underline"><i class="fa fa-cog" aria-hidden="true" /> Projecten</a></li>
+        <li><a href="#about" class="underline"><i class="fa fa-info" aria-hidden="true"/> About</a></li>
       </ul>
     </div>
 
@@ -68,7 +68,7 @@
 
   li {
 		margin-inline: .8em;
-		font-size: 1.8rem; 
+		font-size: 1.6rem; 
     opacity: .75;
     transition: linear 0.3s;
     text-transform: uppercase;
@@ -90,10 +90,18 @@
 	} */
 
   a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
-  h2, 
+  a:hover {
+    color: var(--white);
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
   p {
     text-align: center;
   }

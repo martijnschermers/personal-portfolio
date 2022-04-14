@@ -62,7 +62,7 @@
     
       <p>{commit.commit.message}</p>
       <div class="content">
-        <a href={commit.html_url}><i class="fa fa-link" /> Github</a>
+        <a href={commit.html_url} class="underline"><i class="fa fa-link" /> Github</a>
         <time>{commit.date}</time>
       </div>
     </div>
