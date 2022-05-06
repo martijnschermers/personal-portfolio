@@ -119,6 +119,8 @@ button {
     background: var(--secondary);
     width: fit-content;
     transition: 0.3s linear;
+    min-width: 30em;
+    max-width: 60%;
 }
 
 .card:hover {
