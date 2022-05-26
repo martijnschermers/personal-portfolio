@@ -26,6 +26,16 @@
     background: #4690cc;
 }
 
+::-moz-selection {
+    color: var(--white);
+    background: var(--primary);
+}
+
+::selection {
+    color: var(--white);
+    background: var(--primary);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -42,7 +52,7 @@ li {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
@@ -79,7 +89,7 @@ a:hover {
 }
 
 button {
-    all: unset; 
+    all: unset;
     cursor: pointer;
 }
 
@@ -127,10 +137,15 @@ button {
     box-shadow: -0.5em -0.5em 0.5em var(--primary);
 }
 
-@media screen and (max-width: 600px) {
+@media (min-width: 768px) {
     h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
+
+    /* .card {
+        min-width: 50%;     
+        max-width: 20%;   
+    } */
 }
 
 @media (hover: hover) and (pointer: fine) {
