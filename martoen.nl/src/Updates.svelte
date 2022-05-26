@@ -14,7 +14,7 @@
 
     if (response.ok) {
       data.forEach(async function (i) {
-        if ((data.type = "PushEvent" && count < 5)) {
+        if ((data.type = "PushEvent" && count < 3)) {
           if (i.payload.commits !== undefined) {
             await Promise.all(
               i.payload.commits.map(async function (commit) {
@@ -35,6 +35,7 @@
                   placeholder.date = date.toLocaleDateString("nl-NL");
                   placeholder.html_url = commitData.html_url;
                   placeholder.image = commitData.author.avatar_url;
+                  placeholder.profile = commitData.author.html_url;
 
                   commits = [...commits, placeholder];
                 })();
@@ -51,7 +52,7 @@
   })();
 </script>
 
-<div id="updates" class="container">
+<div id="updates" class="updates container">
   <h1>Updates</h1>
   <p class="section-info">Commits naar mijn openbare Github repositories:</p>
 
@@ -59,7 +60,7 @@
     {#each commits as commit}
       <div class="card">
         <div class="header">
-          <img src={commit.image} alt="Avatar of author" />
+          <a href="{commit.profile}" alt="Link to author profile"><img src={commit.image} alt="Avatar of author" /></a>
           <h2>{commit.repo}</h2>
         </div>
 
@@ -85,8 +86,8 @@
   }
 
   img {
-    width: 64px;
-    height: 64px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     margin-right: 1rem;
   }
@@ -108,30 +109,29 @@
 
   .wrapper {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto;
     grid-gap: 1rem;
+    place-items: center;
   }
 
-  .card {
-    max-width: 30em;
+  .updates {
+    margin-top: 2rem;
   }
 
-  @media (max-width: 768px) {
-    .wrapper {
-      grid-template-columns: auto;
-    }
-
+  @media (min-width: 768px) {
     img {
-      width: 48px;
-      height: 48px;
+      width: 64px;
+      height: 64px;
     }
 
     h2 {
       font-size: 1.5rem;
     }
+  }
 
-    .card {
-      width: 10em;
+  @media (min-width: 870px) {
+    .wrapper {
+      grid-template-columns: auto auto;
     }
   }
 </style>

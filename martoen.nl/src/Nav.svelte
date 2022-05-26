@@ -130,7 +130,7 @@
     padding: 1rem;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 810px) {
     li {
       opacity: 1;
     }
