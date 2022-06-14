@@ -1,36 +1,26 @@
 <script>
-  import { fly } from "svelte/transition";
-  import { onMount } from "svelte";
-
-  let visible = false;
-  onMount(() => (visible = true));
 </script>
 
 <div id="projects" class="projects container">
-  <h1>Projecten</h1>
-  {#if visible}
-    <div transition:fly={{ y: 200, duration: 2000 }} class="card">
-      <h2>Schooster</h2>
+	<h1>Projecten</h1>
 
-      <p>
-        Dit project is een website gemaakt met het Django framework. Deze
-        website laat de roosters zien van mij en mijn naasten.
-      </p>
-      <a href="https://schooster.nl/" class="underline"><i class="fa fa-link" /> Website</a>
-    </div>
-
-    <div transition:fly={{ y: 200, duration: 2000 }} class="card">
-      <h2>JavaScript API</h2>
-
-      <p>
-        Door dit kleine project ben ik meer te weten gekomen over werken met
-        API's. In dit geval ging het over een REST API die JSON data teruggaf.
-        Ik heb deze API ook verwerkt in deze website.
-      </p>
-      <a href="https://github.com/martijnschermers/javascript-api" class="underline"><i class="fa fa-link" /> Github</a
-      >
-    </div>
-  {/if}
+	<div class="card-normal w-96 bg-base-100 shadow-xl">
+		<div class="card-body">
+			<h2 class="card-title">Schooster</h2>
+			<p>
+				Dit project is een website gemaakt met het Django framework. Deze website
+				laat de roosters zien van mij en mijn naasten.
+			</p>
+			<div class="card-actions justify-end">
+				<a href="https://schooster.nl/" class="btn btn-primary"> Website </a>
+			</div>
+			<div>
+				<div class="badge">Django</div>
+				<div class="badge badge-primary">Python</div>
+				<div class="badge badge-secondary">Bootstrap</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <style>
