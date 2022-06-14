@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  width: .75em;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4690cc;
+}
+
+::-moz-selection {
+  color: var(--white);
+  background: var(--primary);
+}
+
+::selection {
+  color: var(--white);
+  background: var(--primary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 1rem;
+  transform: skew(-5deg);
+  text-shadow: 3px 3px 0 var(--primary);
+  letter-spacing: .25rem;
+}
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  padding: 1.5em;
+  margin: 1.5em;
+  border-radius: 1.2em;
+  box-shadow: 0.5em 0.5em 0.5em var(--primary);
+  background: var(--secondary);
+  width: fit-content;
+  transition: 0.3s linear;
+  min-width: 30em;
+  max-width: 60%;
+}
+
+.card:hover {
+  box-shadow: -0.5em -0.5em 0.5em var(--primary);
+}
+
+@media (min-width: 768px) {
+  h1 {
+      font-size: 2.5rem;
+  }
+
+  /* .card {
+      min-width: 50%;     
+      max-width: 20%;   
+  } */
+}
