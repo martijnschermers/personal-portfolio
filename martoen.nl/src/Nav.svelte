@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
 	import { fade, draw, fly } from 'svelte/transition';
-	import { shape } from './shape.js';
+	// import { shape } from './shape.js';
 
   let visible = false;
   onMount(() => (visible = true));
