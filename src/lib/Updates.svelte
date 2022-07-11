@@ -1,8 +1,10 @@
 <script>
+  import Error from "./components/Error.svelte";
+
   const URL = "https://api.github.com/users/martijnschermers/events/public";
   let commits = [];
   let count = 0;
-  let error;
+  let message;
 
   (async function () {
     let response = await fetch(URL, {
@@ -14,7 +16,7 @@
     let data = await response.json();
 
     if (!response.ok) {
-      error = data.message;
+      message = data.message;
       return;
     }
 
@@ -24,7 +26,13 @@
           await Promise.all(
             i.payload.commits.map(async function (commit) {
               let placeholder = {};
-              placeholder.commit = commit;
+
+              if (commit.message.includes("\n")) {
+                placeholder.message = commit.message.split("\n")[0];
+              } else {
+                placeholder.message = commit.message;
+              }
+
               placeholder.repo = i.repo.name.split("/")[1];
 
               (async function () {
@@ -44,6 +52,7 @@
 
                 commits = [...commits, placeholder];
               })();
+
               count++;
             })
           );
@@ -56,21 +65,21 @@
 <div id="updates" class="updates container">
   <h1>Updates</h1>
   <p class="section-info">Commits naar mijn openbare Github repositories:</p>
-  {#if error}
-    <p class="error">{error}</p>
+  {#if message}
+    <Error {message} />
   {/if}
 
   <div class="wrapper">
     {#each commits as commit}
       <div class="card">
         <div class="header">
-          <a href={commit.profile} alt="Link to author profile"
-            ><img src={commit.image} alt="Avatar of author" /></a
-          >
+          <a href={commit.profile} alt="Link to author profile">
+            <img src={commit.image} alt="Avatar of author" />
+          </a>
           <h2>{commit.repo}</h2>
         </div>
 
-        <p>{commit.commit.message}</p>
+        <p>{commit.message}</p>
         <div class="content">
           <a href={commit.html_url} class="underline">
             <i class="fa fa-link" /> Github
@@ -88,7 +97,7 @@
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
   img {
