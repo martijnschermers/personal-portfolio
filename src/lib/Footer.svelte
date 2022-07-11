@@ -6,11 +6,13 @@
     link: "https://github.com/martijnschermers",
     label: "Github profile link",
   });
+
   icons.push({
     class: "fa fa-linkedin",
     link: "https://www.linkedin.com/in/martijn-schermers/",
     label: "LinkedIn profile link",
   });
+
   icons.push({
     class: "fa fa-steam",
     link: "https://steamcommunity.com/profiles/76561198329654915/",
@@ -61,7 +63,7 @@
 
   .fa-heart {
     font-size: 1.4rem;
-    color: red;
+    color: var(--error);
     margin: 0.5rem;
   }
 </style>
