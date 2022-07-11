@@ -6,20 +6,22 @@
   onMount(() => (visible = true));
 </script>
 
-<div id="projects" class="projects container">
+<div id="projects" class="container">
   <h1>Projecten</h1>
   {#if visible}
-    <div transition:fly={{ y: 200, duration: 2000 }} class="card">
+    <div transition:fly={{ y: 200, duration: 2000 }}>
       <h2>Schooster</h2>
 
       <p>
         Dit project is een website gemaakt met het Django framework. Deze
         website laat de roosters zien van mij en mijn naasten.
       </p>
-      <a href="https://schooster.nl/" class="underline"><i class="fa fa-link" /> Website</a>
+      <a href="https://schooster.nl/" class="underline">
+        <i class="fa fa-link" /> Website
+      </a>
     </div>
 
-    <div transition:fly={{ y: 200, duration: 2000 }} class="card">
+    <div transition:fly={{ y: 200, duration: 2000 }}>
       <h2>JavaScript API</h2>
 
       <p>
@@ -27,8 +29,12 @@
         API's. In dit geval ging het over een REST API die JSON data teruggaf.
         Ik heb deze API ook verwerkt in deze website.
       </p>
-      <a href="https://github.com/martijnschermers/javascript-api" class="underline"><i class="fa fa-link" /> Github</a
+      <a
+        href="https://github.com/martijnschermers/javascript-api"
+        class="underline"
       >
+        <i class="fa fa-link" />Github
+      </a>
     </div>
   {/if}
 </div>
