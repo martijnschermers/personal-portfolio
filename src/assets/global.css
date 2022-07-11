@@ -11,6 +11,7 @@
 	--primary: #4FACF7;
 	--primary-focus: hsl(207, 91%, 75%);
 	--base: #001220;
+	--base-300: hsl(208, 49%, 15%);
 	--content: #fff;
 	--black: #0B0C10;
 	--white: #fff;
@@ -22,6 +23,7 @@
 	--primary: #4FACF7;
 	--primary-focus: hsl(207, 91%, 75%);
 	--base: #fff;
+	--base-300: hsl(0, 0%, 80%);
 	--black: #0B0C10;
 	--content: #001220;
 	--white: #fff;
@@ -173,6 +175,7 @@ button {
 		--primary: #4FACF7;
 		--primary-focus: hsl(207, 91%, 75%);
 		--base: #001220;
+		--base-300: hsl(208, 29%, 10%);
 		--content: #fff;
 		--black: #0B0C10;
 		--white: #fff;
