@@ -6,11 +6,26 @@
 	box-sizing: border-box;
 }
 
-:root {
+:root[color-mode="dark"] {
+	color-scheme: dark;
 	--primary: #4FACF7;
-	--secondary: #001220;
+	--primary-focus: hsl(207, 91%, 75%);
+	--base: #001220;
+	--content: #fff;
 	--black: #0B0C10;
 	--white: #fff;
+	--error: #FF5252;
+}
+
+:root[color-mode="light"] {
+	color-scheme: light;
+	--primary: #4FACF7;
+	--primary-focus: hsl(207, 91%, 75%);
+	--base: #fff;
+	--black: #0B0C10;
+	--content: #001220;
+	--white: #fff;
+	--error: #FF5252;
 }
 
 ::-webkit-scrollbar {
@@ -26,7 +41,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #4690cc;
+	background: var(--primary-focus);
 }
 
 ::-moz-selection {
@@ -45,13 +60,27 @@ html {
 
 body {
 	font-size: 0.8em;
-	font-family: "Lato", Courier, monospace;
-	background-color: var(--secondary);
+	font-family: "Lato", monospace;
+	background-color: var(--base);
 	color: var(--white);
 }
 
+ul {
+	margin-block: 1em;
+	display: flex;
+}
+
 li {
-	list-style: none;
+	all: unset;
+	margin-inline: 0.8em;
+	font-size: 1.6rem;
+	opacity: 0.75;
+	transition: linear 0.3s;
+	text-transform: uppercase;
+}
+
+li:hover {
+	opacity: 1;
 }
 
 h1 {
@@ -59,7 +88,7 @@ h1 {
 	font-weight: bold;
 	text-transform: uppercase;
 	text-align: center;
-	color: var(--white);
+	color: var(--content);
 	margin-bottom: 1rem;
 	transform: skew(-5deg);
 	text-shadow: 3px 3px 0 var(--primary);
@@ -81,7 +110,7 @@ p {
 a {
 	font-family: "Lato", Courier, monospace;
 	text-decoration: none;
-	color: var(--white);
+	color: var(--content);
 	font-size: 1.2rem;
 	font-weight: bold;
 	transition: 0.3s linear;
@@ -101,7 +130,7 @@ button {
 }
 
 .underline:hover {
-	color: var(--white);
+	color: var(--content);
 }
 
 .underline::before {
@@ -111,7 +140,7 @@ button {
 	right: 0;
 	width: 0;
 	height: 2px;
-	background-color: var(--white);
+	background-color: var(--base);
 	transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -132,23 +161,41 @@ button {
 	background: var(--secondary);
 	width: fit-content;
 	transition: 0.3s linear;
-	min-width: 30em;
-	max-width: 60%;
 }
 
 .card:hover {
 	box-shadow: -0.5em -0.5em 0.5em var(--primary);
 }
 
-@media (min-width: 768px) {
+@media(prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+		--primary: #4FACF7;
+		--primary-focus: hsl(207, 91%, 75%);
+		--base: #001220;
+		--content: #fff;
+		--black: #0B0C10;
+		--white: #fff;
+		--error: #FF5252;
+	}
+}
+
+@media (hover: hover) {
+	/* Only for devices that support hovering */
+}
+
+@media (min-width: 480px) {
+	/*CSS for medium width screens*/
+}
+
+@media (min-width: 800px) {
 	h1 {
 		font-size: 2.5rem;
 	}
+}
 
-	/* .card {
-        min-width: 50%;     
-        max-width: 20%;   
-    } */
+@media (min-width: 1100px) {
+	/*CSS for really wide screens*/
 }
 
 @media (hover: hover) and (pointer: fine) {
