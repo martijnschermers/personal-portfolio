@@ -9,7 +9,17 @@
 <main>
   <Nav />
   <Updates />
+  <div />
   <Projects />
+  <div />
   <About />
   <Footer />
 </main>
+
+<style>
+  div {
+    background-color: var(--primary);
+    height: 0.25rem;
+    width: 100%;
+  }
+</style>
