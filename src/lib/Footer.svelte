@@ -29,7 +29,7 @@
     Gemaakt met <i class="fa fa-heart" /> en
     <a href="https://svelte.dev" aria-label="Link to Svelte website">
       <img src="./images/svelte.png" alt="Svelte logo" />
-      </a>
+    </a>
   </p>
 </footer>
 
