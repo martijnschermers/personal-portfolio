@@ -35,6 +35,21 @@
     margin-right: 1rem;
   }
 
+  .card {
+    padding: 1.5em;
+    margin: 1.5em;
+    border-radius: 1.2em;
+    box-shadow: 0.5em 0.5em 0.5em var(--primary);
+    background: var(--secondary);
+    min-width: max-content;
+    width: fit-content;
+    transition: 0.3s linear;
+  }
+
+  .card:hover {
+    box-shadow: -0.5em -0.5em 0.5em var(--primary);
+  }
+
   .content {
     display: flex;
     justify-content: space-between;

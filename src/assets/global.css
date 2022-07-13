@@ -93,7 +93,7 @@ h1 {
 	color: var(--content);
 	margin-bottom: 1rem;
 	transform: skew(-5deg);
-	text-shadow: 3px 3px 0 var(--primary);
+	text-shadow: 2px 2px 0 var(--primary);
 	letter-spacing: .25rem;
 }
 
@@ -142,7 +142,7 @@ button {
 	right: 0;
 	width: 0;
 	height: 2px;
-	background-color: var(--base);
+	background-color: var(--content);
 	transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -153,20 +153,6 @@ button {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-}
-
-.card {
-	padding: 1.5em;
-	margin: 1.5em;
-	border-radius: 1.2em;
-	box-shadow: 0.5em 0.5em 0.5em var(--primary);
-	background: var(--secondary);
-	width: fit-content;
-	transition: 0.3s linear;
-}
-
-.card:hover {
-	box-shadow: -0.5em -0.5em 0.5em var(--primary);
 }
 
 @media(prefers-color-scheme: dark) {
