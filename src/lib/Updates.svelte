@@ -4,7 +4,6 @@
 
   const URL = "https://api.github.com/users/martijnschermers/events/public";
   let commits = [];
-  let count = 0;
   let message;
 
   (async function () {
@@ -22,10 +21,11 @@
     }
 
     data.forEach(async function (i) {
-      if ((data.type = "PushEvent" && count < 3)) {
+      if ((data.type = "PushEvent")) {
         if (i.payload.commits !== undefined) {
           await Promise.all(
-            i.payload.commits.map(async function (commit) {
+            i.payload.commits.forEach(async function (commit) {
+              console.log(commit);
               let placeholder = {};
 
               if (commit.message.includes("\n")) {
@@ -51,11 +51,10 @@
                 placeholder.image = commitData.author.avatar_url;
                 placeholder.profile = commitData.author.html_url;
 
-                commits = [...commits, placeholder];
+                if (commits.length < 4) {
+                  commits = [...commits, placeholder];
+                }
               })();
-
-              console.log(count);
-              count++;
             })
           );
         }
