@@ -7,5 +7,6 @@
 <style>
   p {
     color: var(--error);
+    padding: 1rem;
   }
 </style>
