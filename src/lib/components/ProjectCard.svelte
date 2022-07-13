@@ -41,7 +41,7 @@
     padding: 1rem;
     border-radius: 0.5rem;
     background-color: var(--base-300);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    box-shadow: 0.25rem 0.25rem 0.25rem var(--primary);
     margin: 1rem;
   }
 
