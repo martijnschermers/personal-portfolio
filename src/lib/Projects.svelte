@@ -1,11 +1,8 @@
 <script>
-  import { onMount } from "svelte";
   import ProjectCard from "./components/ProjectCard.svelte";
 
-  let visible = false;
-  onMount(() => (visible = true));
-
   let projects = [];
+
   projects.push({
     title: "Schooster",
     description: `Dit project is een website gemaakt met het Django framework. Deze website laat de roosters zien van mij en mijn naasten.`,
