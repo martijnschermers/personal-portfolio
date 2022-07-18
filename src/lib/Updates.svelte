@@ -25,7 +25,6 @@
         if (i.payload.commits !== undefined) {
           await Promise.all(
             i.payload.commits.forEach(async function (commit) {
-              console.log(commit);
               let placeholder = {};
 
               if (commit.message.includes("\n")) {
