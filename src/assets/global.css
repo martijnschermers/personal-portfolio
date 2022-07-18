@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root[color-mode="dark"] {
+	color-scheme: dark;
+	--primary: #4FACF7;
+	--primary-focus: hsl(207, 91%, 75%);
+	--base: #001220;
+	--base-300: hsl(208, 49%, 15%);
+	--content: #fff;
+	--black: #0B0C10;
+	--white: #fff;
+	--error: #FF5252;
+}
+
+:root[color-mode="light"] {
+	color-scheme: light;
+	--primary: #4FACF7;
+	--primary-focus: hsl(207, 91%, 75%);
+	--base: #fff;
+	--base-300: hsl(0, 0%, 80%);
+	--black: #0B0C10;
+	--content: #001220;
+	--white: #fff;
+	--error: #FF5252;
+}
+
+::-webkit-scrollbar {
+	width: .75em;
+}
+
+::-webkit-scrollbar-track {
+	background: var(--secondary);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--primary-focus);
+}
+
+::-moz-selection {
+	color: var(--white);
+	background: var(--primary);
+}
+
+::selection {
+	color: var(--white);
+	background: var(--primary);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 0.8em;
+	font-family: "Lato", monospace;
+	background-color: var(--base);
+	color: var(--white);
+}
+
+ul {
+	margin-block: 1em;
+	display: flex;
+}
+
+li {
+	all: unset;
+	margin-inline: 0.8em;
+	font-size: 1.6rem;
+	opacity: 0.75;
+	transition: linear 0.3s;
+	text-transform: uppercase;
+}
+
+li:hover {
+	opacity: 1;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--content);
+	margin-bottom: 1rem;
+	transform: skew(-5deg);
+	text-shadow: 2px 2px 0 var(--primary);
+	letter-spacing: .25rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+p {
+	font-size: 1.2rem;
+	line-height: 1.5;
+	margin-bottom: 1rem;
+}
+
+a {
+	font-family: "Lato", Courier, monospace;
+	text-decoration: none;
+	color: var(--content);
+	font-size: 1.2rem;
+	font-weight: bold;
+	transition: 0.3s linear;
+}
+
+a:hover {
+	color: var(--primary);
+}
+
+button {
+	all: unset;
+	cursor: pointer;
+}
+
+.underline {
+	position: relative;
+}
+
+.underline:hover {
+	color: var(--content);
+}
+
+.underline::before {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	right: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--content);
+	transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+@media(prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+		--primary: #4FACF7;
+		--primary-focus: hsl(207, 91%, 75%);
+		--base: #001220;
+		--base-300: hsl(208, 29%, 10%);
+		--content: #fff;
+		--black: #0B0C10;
+		--white: #fff;
+		--error: #FF5252;
+	}
+}
+
+@media (hover: hover) {
+	/* Only for devices that support hovering */
+}
+
+@media (min-width: 480px) {
+	/*CSS for medium width screens*/
+}
+
+@media (min-width: 800px) {
+	h1 {
+		font-size: 2.5rem;
+	}
+}
+
+@media (min-width: 1100px) {
+	/*CSS for really wide screens*/
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.underline:hover::before {
+		left: 0;
+		right: auto;
+		width: 100%;
+	}
+}
