@@ -41,7 +41,7 @@
     border-radius: 1.2em;
     box-shadow: 0.5em 0.5em 0.5em var(--primary);
     background: var(--secondary);
-    min-width: max-content;
+    min-width: 90%;
     width: fit-content;
     transition: 0.3s linear;
   }
