@@ -1,5 +1,6 @@
 <script>
   import ProjectCard from "./components/ProjectCard.svelte";
+  import AddProject from "./AddProject.svelte";
 
   let projects = [];
 
@@ -82,6 +83,8 @@
   {#each projects as project}
     <ProjectCard {project} />
   {/each}
+
+  <AddProject />
 </div>
 
 <style>
