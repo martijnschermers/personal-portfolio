@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@font-face {
+  font-family: 'League Spartan';
+  src: url('LeagueSpartan.woff2') format('woff2-variations');
+  font-weight: 200 900;
+}
 
 * {
 	padding: 0;
@@ -6,27 +10,13 @@
 	box-sizing: border-box;
 }
 
-:root[color-mode="dark"] {
-	color-scheme: dark;
+:root {
 	--primary: #4FACF7;
 	--primary-focus: hsl(207, 91%, 75%);
-	--base: #001220;
-	--base-300: hsl(208, 49%, 15%);
+	--base: hsl(206, 100%, 6%);
+	--base-300: hsl(206, 100%, 10%);
 	--content: #fff;
 	--black: #0B0C10;
-	--white: #fff;
-	--error: #FF5252;
-}
-
-:root[color-mode="light"] {
-	color-scheme: light;
-	--primary: #4FACF7;
-	--primary-focus: hsl(207, 91%, 75%);
-	--base: #fff;
-	--base-300: hsl(0, 0%, 80%);
-	--black: #0B0C10;
-	--content: #001220;
-	--white: #fff;
 	--error: #FF5252;
 }
 
@@ -62,7 +52,7 @@ html {
 
 body {
 	font-size: 0.8em;
-	font-family: "Lato", monospace;
+	font-family: "League Spartan", monospace;
 	background-color: var(--base);
 	color: var(--white);
 }
@@ -78,7 +68,6 @@ li {
 	font-size: 1.6rem;
 	opacity: 0.75;
 	transition: linear 0.3s;
-	text-transform: uppercase;
 }
 
 li:hover {
@@ -88,19 +77,26 @@ li:hover {
 h1 {
 	font-size: 2rem;
 	font-weight: bold;
-	text-transform: uppercase;
 	text-align: center;
 	color: var(--content);
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 2rem;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
 	margin-bottom: 1rem;
 	transform: skew(-5deg);
 	text-shadow: 2px 2px 0 var(--primary);
 	letter-spacing: .25rem;
 }
 
-h2 {
-	font-size: 1.5rem;
-	font-weight: bold;
-	margin-bottom: 1rem;
+img {
+	border-radius: 2em;
+	box-shadow: var(--primary) 0 0 0.5em;
+	width: 256px;
 }
 
 p {
@@ -110,7 +106,7 @@ p {
 }
 
 a {
-	font-family: "Lato", Courier, monospace;
+	font-family: "League Spartan", Courier, monospace;
 	text-decoration: none;
 	color: var(--content);
 	font-size: 1.2rem;
@@ -153,20 +149,6 @@ button {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-}
-
-@media(prefers-color-scheme: dark) {
-	:root {
-		color-scheme: dark;
-		--primary: #4FACF7;
-		--primary-focus: hsl(207, 91%, 75%);
-		--base: #001220;
-		--base-300: hsl(208, 29%, 10%);
-		--content: #fff;
-		--black: #0B0C10;
-		--white: #fff;
-		--error: #FF5252;
-	}
 }
 
 @media (hover: hover) {
