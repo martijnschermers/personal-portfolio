@@ -63,7 +63,8 @@
 </script>
 
 <div id="updates" class="updates container">
-  <h1>Updates</h1>
+  <h2>Updates</h2>
+  
   <p class="section-info">Commits naar mijn openbare Github repositories:</p>
   {#if message}
     <Error {message} />
