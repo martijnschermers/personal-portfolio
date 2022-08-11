@@ -1,76 +1,63 @@
 <script>
   import ProjectCard from "./components/ProjectCard.svelte";
-  import AddProject from "./AddProject.svelte";
 
   let projects = [];
 
   projects.push({
-    title: "Schooster",
-    description: `Dit project is een website gemaakt met het Django framework. Deze website laat de roosters zien van mij en mijn naasten.`,
+    title: "Aqua Movies",
+    description:
+      "Bootstrap website die een aantal films toont die destijds in de bioscoop draaide.",
     type: "Website",
-    link: "https://schooster.nl",
+    link: "https://aquamovies.netlify.app/",
     badges: [
-      {
-        name: "Django",
-        link: "https://www.djangoproject.com/",
-        color: "var(--primary)",
-      },
-      {
-        name: "Sass",
-        link: "https://sass-lang.com/",
-        color: "var(--primary)",
-      },
       {
         name: "Bootstrap",
         link: "https://getbootstrap.com/",
+        color: "var(--primary)",
+      },
+      {
+        name: "Netlify",
+        link: "https://www.netlify.com/",
         color: "var(--primary)",
       },
     ],
   });
 
   projects.push({
-    title: "Schooster",
-    description: `Dit project is een website gemaakt met het Django framework. Deze website laat de roosters zien van mij en mijn naasten.`,
-    type: "Website",
-    link: "https://schooster.nl",
+    title: "Remove Email",
+    description:
+      "Een simpel command line tooltje die volledige inboxen uit je email account kan verwijderen.",
+    type: "Script",
+    link: "https://github.com/martijnschermers/remove-email",
     badges: [
       {
-        name: "Django",
-        link: "https://www.djangoproject.com/",
-        color: "var(--primary)",
-      },
-      {
-        name: "Sass",
-        link: "https://sass-lang.com/",
-        color: "var(--primary)",
-      },
-      {
-        name: "Bootstrap",
-        link: "https://getbootstrap.com/",
+        name: "Python",
+        link: "https://www.python.org/",
         color: "var(--primary)",
       },
     ],
   });
 
   projects.push({
-    title: "Schooster",
-    description: `Dit project is een website gemaakt met het Django framework. Deze website laat de roosters zien van mij en mijn naasten.`,
-    type: "Website",
-    link: "https://schooster.nl",
+    title: "Share a Meal",
+    description:
+      "Een API geschreven met Node.js en Express die het mogelijk maakt om maaltijden te delen.",
+    type: "API",
+    link: "https://share-a-meal-backend.herokuapp.com",
     badges: [
       {
-        name: "Django",
-        link: "https://www.djangoproject.com/",
+        name: "Node.js",
+        link: "https://nodejs.org/",
         color: "var(--primary)",
       },
       {
-        name: "Sass",
-        link: "https://sass-lang.com/",
+        name: "Express",
+        link: "https://expressjs.com/",
         color: "var(--primary)",
       },
       {
-        name: "Bootstrap",
-        link: "https://getbootstrap.com/",
+        name: "Heroku",
+        link: "https://www.heroku.com/",
         color: "var(--primary)",
       },
     ],
@@ -78,13 +65,11 @@
 </script>
 
 <div id="projects" class="container">
-  <h1>Projecten</h1>
+  <h2>Projecten</h2>
 
   {#each projects as project}
     <ProjectCard {project} />
   {/each}
-
-  <AddProject />
 </div>
 
 <style>
