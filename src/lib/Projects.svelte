@@ -27,7 +27,7 @@
     title: "Remove Email",
     description:
       "Een simpel command line tooltje die volledige inboxen uit je email account kan verwijderen.",
-    type: "Script",
+    type: "Github",
     link: "https://github.com/martijnschermers/remove-email",
     badges: [
       {
@@ -42,7 +42,7 @@
     title: "Share a Meal",
     description:
       "Een API geschreven met Node.js en Express die het mogelijk maakt om maaltijden te delen.",
-    type: "API",
+    type: "Website",
     link: "https://share-a-meal-backend.herokuapp.com",
     badges: [
       {
