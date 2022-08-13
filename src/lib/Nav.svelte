@@ -8,24 +8,18 @@
 
 <div id="header" class="header container">
   <nav>
-    <h1>Martijn Schermers</h1>
+    <h1 class="cut-text">Martijn Schermers</h1>
 
     <div class="middle-nav">
       <ul>
         <li>
-          <a href="#updates" class="underline">
-            Updates
-          </a>
+          <a href="#updates" class="underline"> Updates </a>
         </li>
         <li>
-          <a href="#projects" class="underline">
-            Projecten
-          </a>
+          <a href="#projects" class="underline"> Projecten </a>
         </li>
         <li>
-          <a href="#about" class="underline">
-            Over Mij
-          </a>
+          <a href="#about" class="underline"> Over Mij </a>
         </li>
       </ul>
     </div>
@@ -60,10 +54,6 @@
     color: var(--white);
   }
 
-  h1 {
-    margin-left: 1em;
-  }
-
   h2 {
     font-size: 2.5rem;
     text-align: center;
@@ -86,6 +76,10 @@
   }
 
   @media (max-width: 810px) {
+    h2 {
+      font-size: 1.75rem;
+    }
+
     li {
       opacity: 1;
     }
