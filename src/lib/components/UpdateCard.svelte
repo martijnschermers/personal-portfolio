@@ -43,7 +43,7 @@
     margin: 1.5em;
     border-radius: 1.2em;
     box-shadow: 0.5em 0.5em 0.5em var(--primary);
-    background: var(--secondary);
+    background: var(--base-300);
     min-width: 90%;
     width: fit-content;
     transition: 0.3s linear;
