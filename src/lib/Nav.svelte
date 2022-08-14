@@ -8,9 +8,9 @@
 
 <div id="header" class="header container">
   <nav>
-    <h1 class="cut-text">Martijn Schermers</h1>
+    <h1>Martijn Schermers</h1>
 
-    <div class="middle-nav">
+    <div class="side-nav">
       <ul>
         <li>
           <a href="#updates" class="underline"> Updates </a>
@@ -19,7 +19,7 @@
           <a href="#projects" class="underline"> Projecten </a>
         </li>
         <li>
-          <a href="#about" class="underline"> Over Mij </a>
+          <a href="#about" class="underline"> About </a>
         </li>
       </ul>
     </div>
@@ -43,7 +43,33 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    margin-block: 1em;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  li {
+    all: unset;
+    margin-inline: 0.8em;
+    font-size: 1.6rem;
+    opacity: 0.75;
+    transition: linear 0.3s;
+  }
+
+  li:hover {
+    opacity: 1;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
   }
 
   a {
@@ -52,15 +78,6 @@
 
   a:hover {
     color: var(--white);
-  }
-
-  h2 {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
-  p {
-    text-align: center;
   }
 
   .header {
@@ -75,17 +92,33 @@
     padding: 1rem;
   }
 
-  @media (max-width: 810px) {
+  .side-nav {
+    display: none;
+  }
+
+  @media (min-width: 800px) {
+    h1 {
+      font-size: 2.5rem; 
+    }
+
     h2 {
       font-size: 1.75rem;
     }
+  }
 
-    li {
-      opacity: 1;
+  @media (min-width: 1100px) {
+    h1 {
+      margin-left: 3rem;
+      font-size: 3rem;
+      text-align: left;
     }
 
-    .middle-nav {
-      display: none;
+    h2 {
+      font-size: 2rem;
+    }
+
+    .side-nav {
+      display: flex;
     }
   }
 </style>
