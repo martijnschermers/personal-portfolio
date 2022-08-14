@@ -1,1 +1,21 @@
-<svg id="visual" viewBox="0 0 1980 1080" width="1980" height="1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"><rect x="0" y="0" width="1980" height="1080" fill="#001220"></rect><defs><linearGradient id="grad1_0" x1="45.5%" y1="0%" x2="100%" y2="100%"><stop offset="13.333333333333334%" stop-color="#001220" stop-opacity="1"></stop><stop offset="86.66666666666667%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><defs><linearGradient id="grad2_0" x1="0%" y1="0%" x2="54.5%" y2="100%"><stop offset="13.333333333333334%" stop-color="#001220" stop-opacity="1"></stop><stop offset="86.66666666666667%" stop-color="#001220" stop-opacity="1"></stop></linearGradient></defs><g transform="translate(1980, 0)"><path d="M0 972C-138.6 970.3 -277.1 968.5 -372 898C-466.8 827.5 -517.9 688.3 -589 589C-660.2 489.8 -751.4 430.6 -818.6 339.1C-885.7 247.6 -928.9 123.8 -972 0L0 0Z" fill="#4FACF7"></path></g><g transform="translate(0, 1080)"><path d="M0 -972C99.2 -890.4 198.3 -808.7 320.3 -773.3C442.3 -737.9 587.1 -748.7 687.3 -687.3C787.5 -625.9 843.2 -492.4 883.2 -365.8C923.3 -239.3 947.6 -119.6 972 0L0 0Z" fill="#4FACF7"></path></g></svg>
+<svg id="visual" viewBox="0 0 1980 1080" width="1980" height="1080" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+  <rect x="0" y="0" width="1980" height="1080" fill="#001220"></rect>
+  <defs>
+    <linearGradient id="grad1_0" x1="45.5%" y1="0%" x2="100%" y2="100%">
+      <stop offset="13.333333333333334%" stop-color="#001220" stop-opacity="1"></stop>
+      <stop offset="86.66666666666667%" stop-color="#001220" stop-opacity="1"></stop>
+    </linearGradient>
+  </defs>
+  <defs>
+    <linearGradient id="grad2_0" x1="0%" y1="0%" x2="54.5%" y2="100%">
+      <stop offset="13.333333333333334%" stop-color="#001220" stop-opacity="1"></stop>
+      <stop offset="86.66666666666667%" stop-color="#001220" stop-opacity="1"></stop>
+    </linearGradient>
+  </defs>
+  <g transform="translate(1980, 0)">
+    <path d="M0 972C-138.6 970.3 -277.1 968.5 -372 898C-466.8 827.5 -517.9 688.3 -589 589C-660.2 489.8 -751.4 430.6 -818.6 339.1C-885.7 247.6 -928.9 123.8 -972 0L0 0Z" fill="#4FACF7"></path>
+  </g>
+  <g transform="translate(0, 1080)">
+    <path d="M0 -972C99.2 -890.4 198.3 -808.7 320.3 -773.3C442.3 -737.9 587.1 -748.7 687.3 -687.3C787.5 -625.9 843.2 -492.4 883.2 -365.8C923.3 -239.3 947.6 -119.6 972 0L0 0Z" fill="#4FACF7"></path>
+  </g>
+</svg>
