@@ -53,18 +53,18 @@
     box-shadow: -0.5em -0.5em 0.5em var(--primary);
   }
 
-  .content {
-    display: flex;
-    justify-content: space-between;
-  }
-
   .header {
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
   }
 
-  @media (min-width: 768px) {
+  .content {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (min-width: 800px) {
     img {
       width: 64px;
       height: 64px;
