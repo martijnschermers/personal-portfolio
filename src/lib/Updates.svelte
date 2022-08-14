@@ -64,7 +64,7 @@
 
 <div id="updates" class="updates container">
   <h2>Updates</h2>
-  
+
   <p class="section-info">Commits naar mijn openbare Github repositories:</p>
   {#if message}
     <Error {message} />
@@ -92,8 +92,8 @@
   .updates {
     margin-top: 2rem;
   }
-
-  @media (min-width: 870px) {
+  
+  @media (min-width: 800px) {
     .wrapper {
       grid-template-columns: auto auto;
     }
