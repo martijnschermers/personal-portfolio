@@ -54,7 +54,7 @@
   li {
     all: unset;
     margin-inline: 0.8em;
-    font-size: 1.6rem;
+    font-size: 1rem;
     opacity: 0.75;
     transition: linear 0.3s;
   }
@@ -88,21 +88,33 @@
     background-repeat: no-repeat;
   }
 
+  .side-nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .welcome {
     padding: 1rem;
   }
 
-  .side-nav {
+  h1 {
     display: none;
   }
 
   @media (min-width: 800px) {
     h1 {
-      font-size: 2.5rem; 
+      display: block;
+      font-size: 2.5rem;
     }
 
     h2 {
       font-size: 1.75rem;
+    }
+
+    .side-nav {
+      justify-content: flex-end;
     }
   }
 
@@ -118,7 +130,7 @@
     }
 
     .side-nav {
-      display: flex;
+      justify-content: flex-end;
     }
   }
 </style>
