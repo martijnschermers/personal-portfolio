@@ -61,10 +61,8 @@ h1 {
 	font-weight: 900;
 	width: 100%;
 	text-align: center; 
-	color: transparent;
+	color: var(--content);
 	margin-bottom: 1rem;
-	background-image: linear-gradient(to right, var(--primary), var(--content));
-  background-clip: text;
 }
 
 h2 {
@@ -82,12 +80,6 @@ h3 {
 	font-weight: bold;
 	color: var(--content);
 	margin-bottom: 1rem;
-}
-
-img {
-	border-radius: 2em;
-	box-shadow: var(--primary) 0 0 0.5em;
-	width: 256px;
 }
 
 svg {
@@ -157,7 +149,9 @@ button {
 }
 
 @media (min-width: 800px) {
-
+	h2 {
+		font-size: 2.5rem;
+	}
 }
 
 @media (min-width: 1100px) {
