@@ -28,7 +28,7 @@
   </div>
 
   <p>
-    Gemaakt met ❤ en
+    Gemaakt met <span>❤</span> en
     <a href="https://svelte.dev" aria-label="Link to Svelte website">Svelte</a>!
   </p>
 </footer>
@@ -41,7 +41,7 @@
     align-items: center;
     background-color: var(--base-300);
     border-radius: 2rem 2rem 0 0;
-    padding: .5rem; 
+    padding: 0.5rem;
   }
 
   i {
@@ -49,9 +49,13 @@
     margin: 1rem;
   }
 
-  p, 
+  p,
   a {
     font-size: 1.4rem;
     text-align: center;
+  }
+
+  p span {
+    color: var(--error);
   }
 </style>
