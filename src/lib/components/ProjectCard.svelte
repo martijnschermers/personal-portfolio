@@ -83,7 +83,9 @@
     font-size: 0.75rem;
   }
 
-  @media (min-width: 768px) {
-
+  @media (min-width: 800px) {
+    .badge a {
+      font-size: 1rem;
+    }
   }
 </style>
