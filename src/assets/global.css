@@ -11,13 +11,12 @@
 }
 
 :root {
-	--primary: #4FACF7;
+	--primary: hsl(207, 91%, 64%);
 	--primary-focus: hsl(207, 91%, 75%);
 	--base: hsl(206, 100%, 6%);
 	--base-300: hsl(206, 100%, 10%);
 	--content: #fff;
-	--black: #0B0C10;
-	--error: #FF5252;
+	--error: hsl(0, 100%, 66%);
 }
 
 ::-webkit-scrollbar {
@@ -57,28 +56,15 @@ body {
 	color: var(--white);
 }
 
-ul {
-	margin-block: 1em;
-	display: flex;
-}
-
-li {
-	all: unset;
-	margin-inline: 0.8em;
-	font-size: 1.6rem;
-	opacity: 0.75;
-	transition: linear 0.3s;
-}
-
-li:hover {
-	opacity: 1;
-}
-
 h1 {
 	font-size: 2rem;
-	font-weight: bold;
-	color: var(--content);
+	font-weight: 900;
+	width: 100%;
+	text-align: center; 
+	color: transparent;
 	margin-bottom: 1rem;
+	background-image: linear-gradient(to right, var(--primary), var(--content));
+  background-clip: text;
 }
 
 h2 {
