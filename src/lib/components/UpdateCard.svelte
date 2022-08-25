@@ -11,6 +11,7 @@
   </div>
 
   <p>{commit.message}</p>
+
   <div class="content">
     <a href={commit.html_url} class="underline">
       <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -31,6 +32,12 @@
     font-size: 1.5rem;
   }
 
+  a {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+  }
+
   img {
     width: 48px;
     height: 48px;
@@ -45,6 +52,7 @@
     box-shadow: 0.5em 0.5em 0.5em var(--primary);
     background: var(--base-300);
     min-width: 90%;
+    max-width: 35em;
     width: fit-content;
     transition: 0.3s linear;
   }
