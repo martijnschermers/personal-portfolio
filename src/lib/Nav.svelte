@@ -55,12 +55,7 @@
     all: unset;
     margin-inline: 0.8em;
     font-size: 1rem;
-    opacity: 0.75;
     transition: linear 0.3s;
-  }
-
-  li:hover {
-    opacity: 1;
   }
 
   h2 {
@@ -111,6 +106,14 @@
 
     h2 {
       font-size: 1.75rem;
+    }
+
+    li {
+      opacity: 0.75;
+    }
+
+    li:hover {
+      opacity: 1;
     }
 
     .side-nav {
