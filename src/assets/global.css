@@ -51,7 +51,7 @@ html {
 
 body {
 	font-size: 0.8em;
-	font-family: "League Spartan", monospace;
+	font-family: "League Spartan", 'Times New Roman', Times, serif;
 	background-color: var(--base);
 	color: var(--white);
 }
