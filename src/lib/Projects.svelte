@@ -55,11 +55,6 @@
         link: "https://expressjs.com/",
         color: "var(--primary)",
       },
-      {
-        name: "Heroku",
-        link: "https://www.heroku.com/",
-        color: "var(--primary)",
-      },
     ],
   });
 </script>
