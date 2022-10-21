@@ -36,12 +36,12 @@
 }
 
 ::-moz-selection {
-	color: var(--white);
+	color: var(--content);
 	background: var(--primary);
 }
 
 ::selection {
-	color: var(--white);
+	color: var(--content);
 	background: var(--primary);
 }
 
@@ -53,7 +53,7 @@ body {
 	font-size: 0.8em;
 	font-family: "League Spartan", 'Times New Roman', Times, serif;
 	background-color: var(--base);
-	color: var(--white);
+	color: var(--content);
 }
 
 h1 {
