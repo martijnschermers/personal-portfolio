@@ -4,20 +4,20 @@
   let projects = [];
 
   projects.push({
-    title: "Aqua Movies",
+    title: "Playful Learning",
     description:
-      "Bootstrap website die een aantal films toont die destijds in de bioscoop draaide.",
-    type: "Website",
-    link: "https://aquamovies.netlify.app/",
+      "Project voor school, geschreven in C# door middel van ASP.NET. Het doel van de website is de Nederlandse taalvaardigheid verbeteren door de mogelijkheid te bieden om je in te schrijven voor spelavonden waar verschillende bordspellen gespeeld zullen worden.",
+    type: "Github",
+    link: "https://github.com/martijnschermers/playful-learning",
     badges: [
       {
-        name: "Bootstrap",
-        link: "https://getbootstrap.com/",
+        name: "ASP.NET",
+        link: "https://dotnet.microsoft.com/en-us/apps/aspnet",
         color: "var(--primary)",
       },
       {
-        name: "Netlify",
-        link: "https://www.netlify.com/",
+        name: "Bootstrap",
+        link: "https://getbootstrap.com/",
         color: "var(--primary)",
       },
     ],
@@ -26,7 +26,7 @@
   projects.push({
     title: "Remove Email",
     description:
-      "Een simpel command line tooltje die volledige inboxen uit je email account kan verwijderen.",
+      "Een simpel command line tooltje die volledige inboxen uit je email account kan verwijderen. Geschreven in Python als een hobby project.",
     type: "Github",
     link: "https://github.com/martijnschermers/remove-email",
     badges: [
@@ -41,9 +41,9 @@
   projects.push({
     title: "Share a Meal",
     description:
-      "Een API geschreven met Node.js en Express die het mogelijk maakt om maaltijden te delen.",
-    type: "Website",
-    link: "https://share-a-meal-backend.herokuapp.com",
+      "Een API geschreven met Node.js en Express als opdracht voor school die het mogelijk maakt om maaltijden te delen. Het doel van het project is om mensen die een maaltijd over hebben te koppelen aan mensen die een maaltijd nodig hebben.",
+    type: "Github",
+    link: "https://github.com/martijnschermers/share-a-meal",
     badges: [
       {
         name: "Node.js",

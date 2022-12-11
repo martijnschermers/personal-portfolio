@@ -1,10 +1,18 @@
 <script>
   import UpdateCard from "./components/UpdateCard.svelte";
   import Error from "./components/Error.svelte";
+  import { onMount } from "svelte";
 
   const URL = "https://api.github.com/users/martijnschermers/events/public";
   let commits = [];
   let message;
+  let mobile = false; 
+
+  onMount(() => {
+    if (window.innerWidth < 800) {
+      mobile = true;
+    }
+  });
 
   (async function () {
     let response = await fetch(URL, {
@@ -43,19 +51,20 @@
               });
               let commitData = await response.json();
 
-              let date = new Date(commitData.commit.committer.date);
-              placeholder.date = date.toLocaleDateString("nl-NL");
+              placeholder.date = new Date(
+                commitData.commit.committer.date
+              ).toLocaleDateString("nl-NL");
               placeholder.html_url = commitData.html_url;
               placeholder.image = commitData.author.avatar_url;
               placeholder.profile = commitData.author.html_url;
 
-              if (commits.length < 4) {
+              if (mobile ? commits.length < 3 : commits.length < 4) {
                 commits = [...commits, placeholder];
               }
             })();
           });
-        };
-      };
+        }
+      }
     });
   })();
 </script>
@@ -63,7 +72,6 @@
 <div id="updates" class="updates container">
   <h2>Updates</h2>
 
-  <p class="section-info">Commits naar mijn openbare Github repositories:</p>
   {#if message}
     <Error {message} />
   {/if}
@@ -76,21 +84,17 @@
 </div>
 
 <style>
-  .section-info {
-    text-align: center;
-  }
-
   .wrapper {
     display: grid;
     grid-template-columns: auto;
-    grid-gap: 1rem;
+    grid-gap: 0.25rem;
     place-items: center;
   }
 
   .updates {
-    margin-top: 2rem;
+    margin-block: 5rem;
   }
-  
+
   @media (min-width: 800px) {
     .wrapper {
       grid-template-columns: auto auto;

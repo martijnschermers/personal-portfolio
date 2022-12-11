@@ -49,7 +49,7 @@
     padding: 1.5em;
     margin: 1.5em;
     border-radius: 1.2em;
-    box-shadow: 0.5em 0.5em 0.5em var(--primary);
+    box-shadow: 0.25em 0.25em 0.25em var(--primary);
     background: var(--base-300);
     min-width: 90%;
     max-width: 35em;
@@ -58,7 +58,7 @@
   }
 
   .card:hover {
-    box-shadow: -0.5em -0.5em 0.5em var(--primary);
+    box-shadow: -0.25em -0.25em 0.25em var(--primary);
   }
 
   .header {

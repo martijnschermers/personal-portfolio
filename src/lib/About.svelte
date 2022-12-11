@@ -16,6 +16,7 @@
 
 <style>
   p {
+    font-size: 1.4rem;
     background-color: var(--base-300);
     box-shadow: 0.25rem 0.25rem 0.25rem var(--primary);
     padding: 1rem;
