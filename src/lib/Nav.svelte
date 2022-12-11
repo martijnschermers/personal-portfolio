@@ -10,8 +10,7 @@
   <nav>
     <h1>Martijn Schermers</h1>
 
-    <div class="side-nav">
-      <ul>
+      <ul class="nav-items">
         <li>
           <a href="#updates" class="underline"> Updates </a>
         </li>
@@ -22,13 +21,12 @@
           <a href="#about" class="underline"> About </a>
         </li>
       </ul>
-    </div>
   </nav>
 
   {#if visible}
     <div transition:fly={{ y: 500, duration: 2000 }} class="welcome">
       <h2>Welkom op mijn website!</h2>
-      <p>Hier vind je mijn recente werk, projecten en informatie over mij.</p>
+      <p>Hier vind je mijn recente werk, projecten en informatie over mij!</p>
     </div>
   {/if}
 </div>
@@ -41,9 +39,10 @@
     right: 0;
     z-index: 1;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    margin-block: 1em;
+    margin: 1em;
   }
 
   ul {
@@ -54,17 +53,22 @@
   li {
     all: unset;
     margin-inline: 0.8em;
-    font-size: 1rem;
     transition: linear 0.3s;
+    opacity: 0.75;
+  }
+
+  h1 {
+    margin: 0.5rem;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
     text-align: center;
   }
 
   p {
     text-align: center;
+    font-weight: 600;
   }
 
   a {
@@ -83,7 +87,7 @@
     background-repeat: no-repeat;
   }
 
-  .side-nav {
+  .nav-items {
     width: 100%;
     display: flex;
     align-items: center;
@@ -94,37 +98,9 @@
     padding: 1rem;
   }
 
-  h1 {
-    display: none;
-  }
-
   @media (min-width: 800px) {
     h1 {
-      display: block;
       font-size: 2.5rem;
-    }
-
-    h2 {
-      font-size: 1.75rem;
-    }
-
-    li {
-      opacity: 0.75;
-    }
-
-    li:hover {
-      opacity: 1;
-    }
-
-    .side-nav {
-      justify-content: flex-end;
-    }
-  }
-
-  @media (min-width: 1100px) {
-    h1 {
-      margin-left: 3rem;
-      font-size: 3rem;
       text-align: left;
     }
 
@@ -132,8 +108,43 @@
       font-size: 2rem;
     }
 
-    .side-nav {
+    p {
+      font-size: 1.5rem;
+    }
+
+    li {
+      opacity: 0.75;
+    }
+
+    li a {
+      font-size: 1.5rem;
+    }
+
+    li:hover {
+      opacity: 1;
+    }
+
+    nav {
+      flex-direction: row;
+    }
+
+    .nav-items {
       justify-content: flex-end;
+    }
+  }
+
+  @media (min-width: 1100px) {
+    h1 {
+      font-size: 3rem;
+      text-align: left;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    li a {
+      font-size: 2rem;
     }
   }
 </style>
