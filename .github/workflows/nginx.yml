@@ -45,6 +45,5 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: 22
         script: |
-          ls
-          mv dist/* /var/www/html
-          sudo rm -rf dist
+          cp -r dist/* /var/www/html
+          rm -rf dist
