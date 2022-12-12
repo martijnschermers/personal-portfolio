@@ -36,6 +36,8 @@ jobs:
       with:
         name: build
 
+      run: ls 
+
     - name: Copy folder using ssh
       uses: appleboy/scp-action@master
       with:
