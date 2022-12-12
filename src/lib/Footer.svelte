@@ -2,21 +2,21 @@
   let icons = [];
 
   icons.push({
-    class: "fa fa-github",
+    class: "fa-brands fa-github",
     link: "https://github.com/martijnschermers",
     label: "Github profile link",
   });
 
   icons.push({
-    class: "fa fa-linkedin",
-    link: "https://www.linkedin.com/in/martijn-schermers/",
-    label: "LinkedIn profile link",
+    class: "fa-brands fa-discord",
+    link: "https://discord.com/users/377152005719719936",
+    label: "Discord profile link",
   });
 
   icons.push({
-    class: "fa fa-steam",
-    link: "https://steamcommunity.com/profiles/76561198329654915/",
-    label: "Steam profile link",
+    class: "fa-brands fa-linkedin-in",
+    link: "https://www.linkedin.com/in/martijn-schermers/",
+    label: "LinkedIn profile link",
   });
 </script>
 
@@ -54,7 +54,7 @@
     font-size: 1.4rem;
     text-align: center;
   }
-
+  
   p span {
     color: var(--error);
   }
