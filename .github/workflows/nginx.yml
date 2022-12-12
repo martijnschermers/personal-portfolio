@@ -20,7 +20,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: 22
         script: |
-          cd ~/var/www/html
+          cd /var/www/html
           git pull origin main
           npm install --only=prod
           npm run build
