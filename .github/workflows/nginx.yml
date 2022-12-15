@@ -21,8 +21,6 @@ jobs:
     - name: Build
       run: npm run build
 
-    - run: ls 
-
     - name: Copy folder using ssh
       uses: appleboy/scp-action@master
       with:
@@ -31,7 +29,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         source: "dist"
-        target: "dist"
+        target: ""
 
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
@@ -43,4 +41,3 @@ jobs:
         port: 22
         script: |
           cp -R dist/* /var/www/html
-          rm -rf dist
