@@ -6,7 +6,7 @@
   const URL = "https://api.github.com/users/martijnschermers/events/public";
   let commits = [];
   let message;
-  let mobile = false; 
+  let mobile = false;
 
   onMount(() => {
     if (window.innerWidth < 800) {
@@ -51,12 +51,10 @@
               });
               let commitData = await response.json();
 
-              placeholder.date = new Date(
-                commitData.commit.committer.date
-              ).toLocaleDateString("nl-NL");
+              placeholder.date = new Date(commitData.commit.committer.date).toLocaleDateString("nl-NL");
               placeholder.html_url = commitData.html_url;
-              placeholder.image = commitData.author.avatar_url;
-              placeholder.profile = commitData.author.html_url;
+              placeholder.image = commitData.author ? commitData.author.avatar_url : "https://avatars.githubusercontent.com/u/70104745?v=4";
+              placeholder.profile = commitData.author ? commitData.author.html_url : "https://github.com/martijnschermers";
 
               if (mobile ? commits.length < 3 : commits.length < 4) {
                 commits = [...commits, placeholder];
