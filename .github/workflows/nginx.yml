@@ -30,7 +30,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         overwrite: true
         source: "dist"
-        target: "dist"
+        target: ""
 
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
