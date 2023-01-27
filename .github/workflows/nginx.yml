@@ -2,9 +2,11 @@ name: Nginx
 
 on:
   push:
-    main
+    branches: 
+      - main
   pull_request:
-    main
+    branches:
+      - main
 
 jobs:
   deploy:
