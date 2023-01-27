@@ -31,7 +31,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
         source: "dist"
-        target: "/"
+        target: "dist"
 
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
@@ -42,4 +42,4 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: 22
         script: |
-          cp -R dist/* /var/www/html
+          cp -R dist/dist/* /var/www/html
