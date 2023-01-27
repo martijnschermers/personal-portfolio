@@ -1,10 +1,10 @@
-name: Nginx CI
+name: Nginx
 
 on:
   push:
-    branches: [ "main" ]
+    main
   pull_request:
-    branches: [ "main" ]
+    main
 
 jobs:
   deploy:
@@ -12,12 +12,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 14.x
+    - name: Use Node.js 18.x
       uses: actions/setup-node@v1
       with:
-        node-version: 14.x
+        node-version: 18.x
     - name: Install dependencies
-      run: npm install
+      run: npm ci 
     - name: Build
       run: npm run build
 
@@ -30,7 +30,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         rm: true
         source: "dist"
-        target: "dist"
+        target: "/"
 
     - name: Deploy using ssh
       uses: appleboy/ssh-action@master
@@ -41,4 +41,4 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         port: 22
         script: |
-          cp -R dist/dist/* /var/www/html
+          cp -R dist/* /var/www/html
