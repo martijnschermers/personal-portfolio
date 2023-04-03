@@ -1,5 +1,7 @@
 # Personal Portfolio
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fbb78d68-500f-4d93-9559-6db14dea9561/deploy-status)](https://app.netlify.com/sites/martijnschermers/deploys)
+
 Source code of my personal portfolio website. The website showcases some of my work and interests. 
 
 ![Demo image](https://i.imgur.com/EPHmThO.png)
